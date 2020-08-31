@@ -1,0 +1,292 @@
+  [1m[35m (177.4ms)[0m  [1m[35mCREATE DATABASE "chatonmaton_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (72.5ms)[0m  [1m[35mCREATE DATABASE "chatonmaton_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7799201128936111755)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200831095912)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "first_name" character varying, "last_name" character varying, "adress" character varying, "zip_code" character varying, "is_admin" boolean, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831095912_devise_create_users.rb:5
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200831095912_devise_create_users.rb:44
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200831095912_devise_create_users.rb:45
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831095912"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200831100723)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "description" text, "price" float, "image_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831100723_create_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831100723"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCarts (20200831101505)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831101505_create_carts.rb:3
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_carts_on_user_id" ON "carts"  ("user_id")[0m
+  ↳ db/migrate/20200831101505_create_carts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831101505"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItemCarts (20200831101838)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "item_carts" ("id" bigserial primary key, "cart_id" bigint, "item_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831101838_create_item_carts.rb:3
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_item_carts_on_cart_id" ON "item_carts"  ("cart_id")[0m
+  ↳ db/migrate/20200831101838_create_item_carts.rb:3
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_item_carts_on_item_id" ON "item_carts"  ("item_id")[0m
+  ↳ db/migrate/20200831101838_create_item_carts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831101838"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateOrders (20200831102424)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831102424_create_orders.rb:3
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE  INDEX  "index_orders_on_user_id" ON "orders"  ("user_id")[0m
+  ↳ db/migrate/20200831102424_create_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831102424"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItemOrders (20200831102606)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "item_orders" ("id" bigserial primary key, "item_id" bigint, "order_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831102606_create_item_orders.rb:3
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE  INDEX  "index_item_orders_on_item_id" ON "item_orders"  ("item_id")[0m
+  ↳ db/migrate/20200831102606_create_item_orders.rb:3
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE  INDEX  "index_item_orders_on_order_id" ON "item_orders"  ("order_id")[0m
+  ↳ db/migrate/20200831102606_create_item_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831102606"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-31 13:16:45.789179"], ["updated_at", "2020-08-31 13:16:45.789179"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7799201128936111755)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-08-31 15:17:06 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 21ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-31 15:25:29 +0200
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-31 15:25:57 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-31 15:27:01 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:17
+  Rendered items/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 609ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial items/_navbar, application/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/mnt/workspace/01-GITHUB/09-The Hacking Project/chatonmaton/app/views"
+  * "/home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.7.2/app/views"
+):
+    15: 
+    16:   <body>
+    17: 
+    18:   <%= render 'navbar' %>
+    19:   
+    20:     <!-- Main content of body -->
+    21:   <div class="" style="margin-top:100px; margin-bottom:60px; ">
+  
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__2538538732832277039_69848652095880'
+Started GET "/" for ::1 at 2020-08-31 15:28:38 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:17
+  Rendered items/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navbar.html.erb (147.3ms)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `url_contains_account_settings?' for #<#<Class:0x00007f0dd0311db8>:0x00007f0dd229db78>):
+    1:  <!-- Start navbar -->
+    2:     <nav class="navbar navbar-expand-lg navbar-light nav-bg-light fixed-top py-2" id="main-nav">
+    3:         <div class="container-fluid">
+    4:         <% if url_contains_account_settings? %>
+    5:           <div class="sidebar-top">
+    6:             <a class="mr-4 ml-0" style="text-decoration:none;">
+    7:               <i class="fas fa-bars fa-2x " onclick="collapseSidebar()"></i>
+  
+app/views/layouts/_navbar.html.erb:4:in `_app_views_layouts__navbar_html_erb__2011660234711857935_69848665615120'
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__2538538732832277039_69848668391820'
+Started GET "/" for ::1 at 2020-08-31 15:28:59 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:17
+  Rendered items/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navbar.html.erb (2.3ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (The asset "logo.png" is not present in the asset pipeline.):
+    2:     <nav class="navbar navbar-expand-lg navbar-light nav-bg-light fixed-top py-2" id="main-nav">
+    3:         <div class="container-fluid">
+    4:           <a class="navbar-brand mr-3" href="<%= root_path %>">
+    5:             <img src="<%= asset_path('logo.png')%>" width="200" height="40" alt="logo">
+    6:           </a>
+    7:           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    8:             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  
+app/views/layouts/_navbar.html.erb:5:in `_app_views_layouts__navbar_html_erb__2011660234711857935_69848665045600'
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__2538538732832277039_69848669536600'
+Started GET "/" for ::1 at 2020-08-31 15:30:16 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:17
+  Rendered items/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navbar.html.erb (143.7ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `active_class' for #<#<Class:0x00007f0dd0311db8>:0x00007f0dd1a75568>):
+    14:               <% if !user_signed_in? %>
+    15:                 <!-- User not logged in -->
+    16: 
+    17:                 <li class="nav-item py-2 <%= active_class(new_user_session_path) %>">
+    18:                   <a href="<%= new_user_session_path %>" class="nav-link"><i class="fas fa-sign-in-alt"></i> Log in</a>
+    19:                 </li>
+    20:                 <li class="nav-item py-2 <%= active_class(new_user_registration_path) %>">
+  
+app/views/layouts/_navbar.html.erb:17:in `_app_views_layouts__navbar_html_erb__2011660234711857935_69848659620020'
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__2538538732832277039_69848664275640'
+Started GET "/" for ::1 at 2020-08-31 15:30:36 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:17
+  Rendered items/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered layouts/_alert.html.erb (0.9ms)
+Completed 200 OK in 63ms (Views: 53.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-08-31 15:31:01 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:17
+  Rendered items/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_alert.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-31 15:31:41 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:17
+  Rendered items/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_alert.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-08-31 15:31:47 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (40.9ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_alert.html.erb (0.4ms)
+Completed 200 OK in 98ms (Views: 80.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-08-31 15:31:49 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_alert.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-08-31 15:32:08 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ILTLAqk0VGP+Fn0o4RJsxnlwwCcs8V9sKvEmi9zdw+Z73TqkKipEa0ElvgJi59hmoOEFkIEVJBCtsD5Pbf8x1A==", "user"=>{"email"=>"nguyentatthanh84466@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nguyentatthanh84466@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "nguyentatthanh84466@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "nguyentatthanh84466@gmail.com"], ["encrypted_password", "$2a$12$3e89DioXLMIDS5Xg3mFd0OnzwSlcdAKY4kY0o4DzzcGp7vmYewrD6"], ["created_at", "2020-08-31 13:32:09.080343"], ["updated_at", "2020-08-31 13:32:09.080343"]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 277ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-31 15:32:09 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:17
+  Rendered items/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:11
+  Rendered layouts/_navbar.html.erb (4.2ms)
+  Rendered layouts/_alert.html.erb (0.6ms)
+Completed 200 OK in 41ms (Views: 37.9ms | ActiveRecord: 1.0ms)
+
+
