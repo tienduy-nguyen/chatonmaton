@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'items#index'
   get 'orders/create'
   get 'orders/destroy'
   get 'orders/update'
