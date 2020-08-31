@@ -10,6 +10,23 @@
   </head>
 
   <body>
+  
+    <!-- Main content of body -->
+  <div class="" style="margin-top:100px; margin-bottom:60px; ">
+
+    <section id="alert-section">
+      <% flash.each do |key, value| %>
+      <div class="alert-dismissible text-center p-2 container <%= flash_class(key) %>">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= value unless value.blank? %>
+      </div>
+      <% end %>
+    </section>
+
     <%= yield %>
+  </div>
+
+
+
   </body>
 </html>
