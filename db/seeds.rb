@@ -23,7 +23,7 @@ item_14 = Item.create(title: "Dino", description:"cat with aleash observing", pr
 item_15 = Item.create(title: "Tony", description:"cat sitting", price: 2.99, image_url: "https://www.washingtonian.com/wp-content/uploads/2019/02/milada-vigerova-1295750-unsplash-994x1491.jpg")
 
 user_1 = User.create(email: "potato6@gmail.com", password: "jkgjfgkP980", first_name: "Joseph", last_name: "Brock", adress: "9397 Fieldstone St.", zip_code: "31525", is_admin: true)
-user_2 = User.create(email: "flower.gl@yahoo.com", password: "gfgfgffg1AZ", first_name: "Mary", last_name: "Lim", adress: "353 SW. Paris Hill Ave.", zip_code: "33801", is_admin: false)
+user_2 = User.create(email: "flower.gl@yahoo.com", password: "gfgfgffg1AZ", first_name: "Mary", last_name: "Lim", adress: "353 SW. Paris Hill Ave.", zip_code: "33801", is_admin: true)
 user_3 = User.create(email: "robert.kevin@gmail.com", password: "zadgftf11", first_name: "Robert", last_name: "Marsden", adress: "9837 Franklin Street", zip_code: "20746", is_admin: false)
 user_4 = User.create(email: "basket.hover@gmail.com", password: "isodsod88", first_name: "Steve", last_name: "Santiago", adress: "9708 East Lakewood Street", zip_code: "19401", is_admin: false)
 user_5 = User.create(email: "violet.sun@gmail.com", password: "kdskd09OP", first_name: "Laura", last_name: "Pace", adress: "409 Border Court", zip_code: "29445", is_admin: false)
@@ -33,7 +33,7 @@ user_8 = User.create(email: "patrick393223@gmail.com", password: "fQiop21", firs
 user_9 = User.create(email: "verclop@yahoo.com", password: "1112FRERdeed", first_name: "Violet", last_name: "Rios", adress: "210 Gartner Ave.", zip_code: "60048", is_admin: false)
 user_10 = User.create(email: "toiucnds@yahoo.com", password: "Zjhettre44", first_name: "Tony", last_name: "Marquez", adress: "9610 East West Ave.", zip_code: "02920", is_admin: false)
 
-cart_1 = Cart.create(user: user_2, item: [item_1, item_2])
+cart_1 = Cart.create(user: user_1, item: [item_1, item_2])
 cart_2 = Cart.create(user: user_2, item: [item_4])
 cart_3 = Cart.create(user: user_3, item: [item_3, item_8])
 cart_4 = Cart.create(user: user_4, item: [item_5])
@@ -41,8 +41,8 @@ cart_5 = Cart.create(user: user_5, item: [item_5, item_14, item_15])
 cart_6 = Cart.create(user: user_6, item: [item_7, item_10, tem_11])
 cart_7 = Cart.create(user: user_7, item: [item_6, item_7])
 cart_8 = Cart.create(user: user_8, item: [item_12])
-cart_9 = Cart.create(user: user_9, item: [item_13, item_13])
-cart_10 = Cart.create(user: user_10, item: [item_11, item_12,item_14, item_14])
+cart_9 = Cart.create(user: user_9, item: [item_13, item_15])
+cart_10 = Cart.create(user: user_10, item: [item_11, item_12,item_14])
 
 order_1 = Order.create(items: cart_1.items, user: cart_1.user) 
 order_2 = Order.create(items: cart_2.items, user: cart_2.user) 
