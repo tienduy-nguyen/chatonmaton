@@ -9,16 +9,15 @@ class User < ApplicationRecord
   has_one :cart
   has_many :orders
 
+  validates :email, 
+  presence:true , 
+  uniqueness:{case_sensitive: false}, 
+  format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Email adress please" }
 
-  def create
-  end 
+  validates :password, length: {minimum: 6}, presence: true, on: :create
+  validates :password_confirmation, length: {minimum: 6}, presence: true, on: :create
+  validates :password, length: {minimum: 6}, presence: true, on: :update, if: :encrypted_password_changed?
+  validates :password_confirmation, length: {minimum: 6}, presence: true, on: :update, if: :encrypted_password_changed?
 
-  def show
-  end
 
-  def update
-  end 
-
-  def destroy
-  end
 end
