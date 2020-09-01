@@ -1,3 +1,49 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.carousel-item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+  width: 100%;
+  position: relative;
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.carousel-item-first {
+  background: {
+    image: asset_url('slide-01');
+  }
+}
+.carousel-item-second {
+  background: {
+    image: asset_url('slide-02');
+  }
+}
+
+.carousel-item-third {
+  background: {
+    image: asset_url('slide-03');
+  }
+}
+
+.btn.btn-custom {
+  background: #717fe0;
+  border-radius: 999px;
+  color: #fff;
+  &:hover {
+    background: #333;
+    color: #fff;
+  }
+}
+
+/* This only changes this particular animation duration */
+.animate__animated {
+  --animate-duration: 3s;
+}
