@@ -8,6 +8,13 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto py-2">
+              <li class="nav-item py-2 <%= active_class(new_user_session_path) %>">
+                  <a href="<%= items_path %>" class="nav-link">Items</a>
+                </li>
+               <li class="nav-item py-2 <%= active_class(new_user_registration_path) %>">
+                  <a href="<%= carts_path %>" class="nav-link">Card</a>
+              </li>
+
               <% if !user_signed_in? %>
                 <!-- User not logged in -->
 
@@ -17,14 +24,35 @@
                 <li class="nav-item py-2 <%= active_class(new_user_registration_path) %>">
                   <a href="<%= new_user_registration_path %>" class="nav-link"><i class="fas fa-user-plus"></i> Sign up</a>
                 </li>
-              <% else %>
+                <% else %>
                 <!-- User logged in -->
-              <li class="nav-item py-2 <%= active_class(new_user_registration_path) %>">
-                  <a href="<%= destroy_user_session_path %>" data-method="DELETE" class="nav-link">Log out</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" 
+                      role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="https://source.unsplash.com/random?avatar"
+                        width="40" height="40" class="rounded-circle">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-user p-0" 
+                          aria-labelledby="navbarDropdownMenuLink">
+                        <div class="d-flex flex-row py-2 mt-0" style="background-color: #f1f1f1">
+                            <div><i class="fas fa-user mx-3 py-3"></i></div>
+                            <a href="<%= account_profile_path %>" class ="p-0 nav-link" >
+                          <span><strong><%= current_user.full_name %></strong></span><br>
+                          <span class="text-muted"><%= current_user.email %></span>
+                      </a>
+                        </div>
+
+                      <a class="dropdown-item" href="#">Profile</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="<%= edit_user_registration_path %>">Account Settings</a>
+                      <a class="dropdown-item" 
+                        href="<%= destroy_user_session_path %>" data-method="DELETE"
+                      >Log Out</a>
+                     
                 </li>
-
-              <% end %>
-
+                  <% end %>
 
           </div>
         </div>

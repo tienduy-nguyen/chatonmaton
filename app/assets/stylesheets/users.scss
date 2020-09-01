@@ -1,3 +1,93 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.account-settings-wrap {
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .nav-item {
+    list-style: none;
+  }
+  .nav-link {
+    position: relative;
+    float: left;
+    text-align: center;
+    padding: 21px 10px;
+    text-decoration: none;
+    font-size: 17px;
+    color: 727475;
+  }
+  .nav-link:hover {
+    cursor: pointer;
+  }
+  .navbar-nav i {
+    font-size: 1.4rem;
+  }
+}
+
+/* Sidebar */
+.account-settings-section {
+  .wrapper {
+    margin-top: 40px;
+    .col {
+      padding-left: 0;
+      margin-left: 0;
+    }
+  }
+  section {
+    margin-top: 40px;
+  }
+}
+
+.dropzone-wrapper {
+  border: 2px dashed #91b0b3;
+  color: #92b0b3;
+  position: relative;
+  min-height: 150px;
+  max-width: 50%;
+}
+
+.dropzone-wrapper--cus {
+  border: 2px dashed #91b0b3;
+  color: #92b0b3;
+  position: relative;
+  min-height: 30vh;
+  max-width: 100%;
+}
+.dropzone-desc {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  top: 50px;
+  font-size: 16px;
+}
+
+.dropzone,
+.dropzone:focus {
+  position: absolute;
+  outline: none !important;
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.dropzone-wrapper:hover,
+.dropzone-wrapper.dragover {
+  background: #ecf0f5;
+}
+
+.preview-zone {
+  text-align: center;
+}
+
+.preview-zone .box {
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}

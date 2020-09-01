@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
   root to: 'items#index'
-  get 'orders/create'
-  get 'orders/destroy'
-  get 'orders/update'
-  get 'orders/show'
-  get 'orders/index'
-  resources :carts
-  resources :items
   devise_for :users
+
+  resources :carts
+  resources :orders
+  resources :items
+
+  # Account settings
+  get 'account/profile', to: "users#profile"
+  patch 'account/profile', to: "users#update_profile"
+  get 'account/secret', to: "users#secret"
+
+
+
   
 end

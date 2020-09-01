@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -27,3 +28,63 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% content_for :title, "Sign Up" %>
+</head>
+<body>
+  <!-- MAIN BODY -->
+  <section>
+     <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 mx-auto">
+            <h2 class="mb-4 text-center">SIGN UP</h2>
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="form-group mb-4">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" , 
+                  class: 'form-control',
+                  placeholder: 'Email',
+                  required: true %>
+            </div>
+
+            <div class="form-row mb-4">
+              <div class="col ">
+                <%= f.password_field :password, autocomplete: "new-password",
+                    class:'form-control', 
+                    placeholder: 'Password', 
+                    required: true, minlength: 6 %>
+              </div>
+              <div class="col mb-4">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password",
+            class:'form-control', 
+                    placeholder: 'Repeat Password', 
+                    required: true, minlength: 6%>
+              </div>
+            </div>
+            <div class="actions text-center">
+              <%= f.submit "Sign up", class:'btn btn-dark form-control rounded-pill mb-3' %>
+            </div>
+            <% end %>
+
+
+            <div class='text-center mx-auto mt-4'>
+              <small>
+                <span>Have already an account?</span>
+                <%= render "devise/shared/links" %>
+              </small>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+</body>
+
+</html>
+>>>>>>> 56f64dc7bd593064806be8e25178d4ea3032b95a

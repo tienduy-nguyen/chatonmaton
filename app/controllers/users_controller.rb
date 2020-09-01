@@ -7,11 +7,22 @@ class UsersController < ApplicationController
 
 
   # PUT account/profile --> update
-  def updateProfile
-    @user.update(user_params)
+  def update_profile
+    if @user.update(user_params)
+      flash[:success] = "Update user profile succesfully!"
+      redirect_back(fallback_location: root_path)
+    else
+      @user.errors.full_messages.each do |message|
+        flash[:error] = message
+      end
+      render :profile
+    end
 
   end
 
+  def secret 
+    
+  end
 
 
   private
