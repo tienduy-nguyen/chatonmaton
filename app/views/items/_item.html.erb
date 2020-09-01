@@ -14,8 +14,8 @@
         <li class="list-group-item">$ <%=item.price%></li>
       </ul>
     <div class="card-body">
-      <%= link_to "More about it", item_path(item, item.id)%>
-      <a href="#top" class="card-link">Back to the top</a>
+      <button type="button" class="btn btn-outline-primary"><%= link_to "More about it", item_path(item, item.id)%></button>
+      <button type="button" class="btn btn-outline-primary">Back to the top !</button>
     </div>
   </div>
 </div>

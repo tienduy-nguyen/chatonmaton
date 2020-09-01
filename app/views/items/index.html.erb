@@ -1,19 +1,24 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
 
-<h1>Items</h1>
-
-
-
-<div class="items">
-    <% @items.each do |item| %>
-    <%= render "item", item: item%>
-    <% end %>
+<div class="jumbotron">
+  <h1 class="display-3">Here are our lovely pictures !</h1>
+  <p class="lead">If you are here, it is because you love those furry cute animals.</p>
+  <hr class="my-4">
+  <p>We love them too and we have tons of quality pictures juste for you.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
 </div>
 
-<br>
+    <div class="items">
+        <% @items.each do |item| %>
+        <%= render "item", item: item%>
+        <% end %>
+    </div>
 
-<%= link_to 'New Item', new_item_path %>
+    <br>
+
+    <%= link_to 'New Item', new_item_path %>
 
 </div>
 
