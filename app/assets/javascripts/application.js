@@ -15,6 +15,14 @@
 //= require turbolinks
 //= require_tree .
 
+// Vendor javascript
+//=require jquery-3.2.1.min
+//=require popper.min
+//=require jquery-ui.min
+//=require tooltip.js
+//=require bootstrap.min
+//=require lightbox.min
+
 //----------------------------------------------//
 // Dropdown menu
 //----------------------------------------------//
@@ -64,7 +72,3 @@ function drag() {
 function drop() {
   document.getElementById('uploadFile').parentNode.className = 'dragBox';
 }
-
-//----------------------------------------------//
-// Date picker
-//----------------------------------------------//
