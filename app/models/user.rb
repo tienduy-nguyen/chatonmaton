@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  after_create :must_create_cart
   
 
   has_one :cart
@@ -26,4 +27,11 @@ class User < ApplicationRecord
      return "#{self.first_name.capitalize unless self.first_name.nil?} #{self.last_name.capitalize unless self.last_name.nil?}"
     end
   end
+
+
+  def must_create_cart
+    cart = Cart.new(user: self)
+    cart.save ? true : cart.errors
+  end
+
 end

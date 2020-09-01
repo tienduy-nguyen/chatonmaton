@@ -33,16 +33,28 @@ user_8 = User.create(email: "patrick393223@gmail.com", password: "fQiop21", firs
 user_9 = User.create(email: "verclop@yahoo.com", password: "1112FRERdeed", first_name: "Violet", last_name: "Rios", adress: "210 Gartner Ave.", zip_code: "60048", is_admin: false)
 user_10 = User.create(email: "toiucnds@yahoo.com", password: "Zjhettre44", first_name: "Tony", last_name: "Marquez", adress: "9610 East West Ave.", zip_code: "02920", is_admin: false)
 
-cart_1 = Cart.create(user: user_1, item: [item_1, item_2])
-cart_2 = Cart.create(user: user_2, item: [item_4])
-cart_3 = Cart.create(user: user_3, item: [item_3, item_8])
-cart_4 = Cart.create(user: user_4, item: [item_5])
-cart_5 = Cart.create(user: user_5, item: [item_5, item_14, item_15])
-cart_6 = Cart.create(user: user_6, item: [item_7, item_10, tem_11])
-cart_7 = Cart.create(user: user_7, item: [item_6, item_7])
-cart_8 = Cart.create(user: user_8, item: [item_12])
-cart_9 = Cart.create(user: user_9, item: [item_13, item_15])
-cart_10 = Cart.create(user: user_10, item: [item_11, item_12,item_14])
+
+
+
+cart_1 = Cart.create(user: User.all.first)
+cart_2 = Cart.create(user: user_2)
+cart_3 = Cart.create(user: user_3)
+cart_4 = Cart.create(user: user_4) 
+cart_5 = Cart.create(user: user_5) 
+cart_6 = Cart.create(user: user_6) 
+cart_7 = Cart.create(user: user_7) 
+cart_8 = Cart.create(user: user_8) 
+cart_9 = Cart.create(user: user_9)
+cart_10 = Cart.create(user: user_10)
+
+
+
+
+
+
+itemCart_1 =  ItemCart.create( cart: cart_1, item: Item.all.sample)
+itemCart_2 =  ItemCart.create( cart: cart_2, item: Item.all.sample)
+
 
 order_1 = Order.create(items: cart_1.items, user: cart_1.user) 
 order_2 = Order.create(items: cart_2.items, user: cart_2.user) 
@@ -54,3 +66,4 @@ order_7 = Order.create(items: cart_7.items, user: cart_7.user)
 order_8 = Order.create(items: cart_8.items, user: cart_8.user) 
 order_9 = Order.create(items: cart_9.items, user: cart_9.user) 
 order_10 = Order.create(items: cart_10.items, user: cart_10.user) 
+

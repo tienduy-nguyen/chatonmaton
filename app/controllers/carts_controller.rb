@@ -13,15 +13,25 @@ class CartsController < ApplicationController
     @cart = Cart.new
   end
 
-  # POST carts
-  def create
-    @cart
-  end
-
   # POST
-  def update
-
+  def create
+    @cart = Cart.find(params[:id])
+    @item = Item.find(params[:item_id])
+    puts "----------------------------"
+    puts params
+    puts @cart
+    puts @item
+    item_cart = ItemCart.new(cart: @cart, item: @item)
+    if item_cart.save
+      redirect_to items_path
+      flash[:success] = "Update an item in cart sucessfully."
+    else
+      redirect_to items_path
+      flash[:error] = "Some error has been occured."
+    end
+    
   end
+  
 
   # DELETE 
   def destroy
