@@ -2,13 +2,8 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
   def index
     @cart = current_user.cart
-    
-    @items = []
-    @total = 0
     @item_carts = ItemCart.where(cart: @cart)
-    @item_carts.each do |item_cart|
-      @total = @total + item_cart.item.price
-    end
+    @total = @item_carts.reduce(0){|sum, ic| sum + ic.item.price}.round(2)
 
   end
   
@@ -25,10 +20,6 @@ class CartsController < ApplicationController
   def create
     @cart = Cart.find(params[:id])
     @item = Item.find(params[:item_id])
-    puts "----------------------------"
-    puts params
-    puts @cart
-    puts @item
     item_cart = ItemCart.new(cart: @cart, item: @item)
     if item_cart.save
       redirect_to items_path
@@ -43,8 +34,6 @@ class CartsController < ApplicationController
 
   # DELETE 
   def destroy
-    puts "------------------"
-    puts params
     @item_cart = ItemCart.find(params[:item_cart_id])
     if @item_cart.destroy
       flash[:success] = "Remove successfully an item"

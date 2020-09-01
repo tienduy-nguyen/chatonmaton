@@ -1,5 +1,4 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
+
 
 <h1><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></h1>
 
@@ -23,17 +22,17 @@
        
       </tr>
     <% end %>
+  
     <tr>
-        <td>
-            <td>Total</td>
-            <td><%= @total %></td>
-        </td>
+            <td><strong>Total</strong></td>
+            <td><strong><%= @total %></strong></td>
     <tr>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+
+<%= link_to 'Checkout', orders_path , method: :post%>
 
 </div>

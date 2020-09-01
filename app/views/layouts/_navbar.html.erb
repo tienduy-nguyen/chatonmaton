@@ -8,11 +8,14 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto py-2">
-              <li class="nav-item py-2 <%= active_class(new_user_session_path) %>">
+              <li class="nav-item py-2 <%= active_class(items_path) %>">
                   <a href="<%= items_path %>" class="nav-link">Items</a>
                 </li>
-               <li class="nav-item py-2 <%= active_class(new_user_registration_path) %>">
-                  <a href="<%= carts_path %>" class="nav-link">Card</a>
+               <li class="nav-item py-2 <%= active_class(carts_path) %>">
+                  <a href="<%= carts_path %>" class="nav-link">Cart</a>
+              </li>
+                <li class="nav-item py-2 <%= active_class(orders_path) %>">
+                  <a href="<%= orders_path %>" class="nav-link">Orders</a>
               </li>
 
               <% if !user_signed_in? %>
@@ -38,7 +41,7 @@
                           aria-labelledby="navbarDropdownMenuLink">
                         <div class="d-flex flex-row py-2 mt-0" style="background-color: #f1f1f1">
                             <div><i class="fas fa-user mx-3 py-3"></i></div>
-                            <a href="<%= account_profile_path %>" class ="p-0 nav-link" >
+                            <a href="<%= account_profile_path %>" class ="p-0 nav-link text-dark" >
                           <span><strong><%= current_user.full_name %></strong></span><br>
                           <span class="text-muted"><%= current_user.email %></span>
                       </a>
