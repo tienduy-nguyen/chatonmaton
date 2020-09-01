@@ -16,7 +16,7 @@
             <a class="mr-3" href="<%= account_profile_path %>">My Account</a>
           </div>
            <div class="topbar-item">
-            <a class="mr-3" href="<%= destroy_user_session_path %>">Logout</a>
+            <a class="mr-3" href="<%= destroy_user_session_path %>" data-method='delete'>Logout</a>
           </div>
 
         <% else %>
