@@ -1,7 +1,10 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @carts = Cart.all
+    @cart = current_user.cart
+    @item_carts = ItemCart.where(cart: @cart)
+    @total = @item_carts.reduce(0){|sum, ic| sum + ic.item.price}.round(2)
+
   end
   
   def show
@@ -13,20 +16,32 @@ class CartsController < ApplicationController
     @cart = Cart.new
   end
 
-  # POST carts
-  def create
-    @cart
-  end
-
   # POST
-  def update
-
+  def create
+    @cart = Cart.find(params[:id])
+    @item = Item.find(params[:item_id])
+    item_cart = ItemCart.new(cart: @cart, item: @item)
+    if item_cart.save
+      redirect_to items_path
+      flash[:success] = "Update an item in cart sucessfully."
+    else
+      redirect_to items_path
+      flash[:error] = "Some error has been occured."
+    end
+    
   end
+  
 
   # DELETE 
   def destroy
-    @event.destroy
-    redirect_to root_path
+    @item_cart = ItemCart.find(params[:item_cart_id])
+    if @item_cart.destroy
+      flash[:success] = "Remove successfully an item"
+    else
+      flash[:error] = "An error has been occured!"
+    end
+    redirect_to carts_path
+
   end
 
   private

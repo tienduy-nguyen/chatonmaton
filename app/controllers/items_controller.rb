@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1
   def show
-    @item = Item.Find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   

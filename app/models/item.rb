@@ -7,5 +7,5 @@ class Item < ApplicationRecord
   validates :title, length: {minimum: 3}, presence: true
   validates :description, length: {minimum: 10}, presence: true
   validates :price, numericality: { greater_than: 1}, presence: true
-  validates :img_url, presence: true
+  validates :image_url, presence: true
 end

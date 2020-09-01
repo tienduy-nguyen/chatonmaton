@@ -36,5 +36,8 @@ module ApplicationHelper
     return time.strftime("%d")
   end
 
+  def check_cart
+
+  end
 
 end
