@@ -7755,3 +7755,1022 @@ Processing by OrdersController#index as HTML
 Completed 200 OK in 62ms (Views: 56.7ms | ActiveRecord: 2.4ms)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (19.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "chatonmaton_development"[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (13.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "chatonmaton_test"[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (24.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (239.8ms)[0m  [1m[35mCREATE DATABASE "chatonmaton_development" ENCODING = 'unicode'[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (77.1ms)[0m  [1m[35mCREATE DATABASE "chatonmaton_test" ENCODING = 'unicode'[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7799201128936111755)[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to DeviseCreateUsers (20200831095912)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "first_name" character varying, "last_name" character varying, "adress" character varying, "zip_code" character varying, "is_admin" boolean, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831095912_devise_create_users.rb:5
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200831095912_devise_create_users.rb:44
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200831095912_devise_create_users.rb:45
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831095912"]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateItems (20200831100723)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "description" text, "price" float, "image_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831100723_create_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831100723"]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateCarts (20200831101505)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831101505_create_carts.rb:3
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_carts_on_user_id" ON "carts"  ("user_id")[0m
+  ↳ db/migrate/20200831101505_create_carts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831101505"]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateItemCarts (20200831101838)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "item_carts" ("id" bigserial primary key, "cart_id" bigint, "item_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831101838_create_item_carts.rb:3
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE  INDEX  "index_item_carts_on_cart_id" ON "item_carts"  ("cart_id")[0m
+  ↳ db/migrate/20200831101838_create_item_carts.rb:3
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_item_carts_on_item_id" ON "item_carts"  ("item_id")[0m
+  ↳ db/migrate/20200831101838_create_item_carts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831101838"]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateOrders (20200831102424)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831102424_create_orders.rb:3
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_orders_on_user_id" ON "orders"  ("user_id")[0m
+  ↳ db/migrate/20200831102424_create_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831102424"]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateItemOrders (20200831102606)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "item_orders" ("id" bigserial primary key, "item_id" bigint, "order_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200831102606_create_item_orders.rb:3
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX  "index_item_orders_on_item_id" ON "item_orders"  ("item_id")[0m
+  ↳ db/migrate/20200831102606_create_item_orders.rb:3
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_item_orders_on_order_id" ON "item_orders"  ("order_id")[0m
+  ↳ db/migrate/20200831102606_create_item_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831102606"]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-01 14:46:44.148607"], ["updated_at", "2020-09-01 14:46:44.148607"]]
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7799201128936111755)[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Steve"], ["description", "cat looking at the window standing up"], ["price", 1.99], ["image_url", "https://cloudfront-eu-central-1.images.arcpublishing.com/prisa/IPZM424KYBEH7IVUKNQZETWHVU.jpg"], ["created_at", "2020-09-01 14:47:00.468328"], ["updated_at", "2020-09-01 14:47:00.468328"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ginger"], ["description", "cat resting"], ["price", 1.99], ["image_url", "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg"], ["created_at", "2020-09-01 14:47:00.483012"], ["updated_at", "2020-09-01 14:47:00.483012"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Leo"], ["description", "cat looking behind a chair"], ["price", 2.99], ["image_url", "https://www.humanesociety.org/sites/default/files/styles/1441x612/public/2018/08/kitten-440379.jpg?h=c8d00152&itok=HVqvfhtg"], ["created_at", "2020-09-01 14:47:00.485188"], ["updated_at", "2020-09-01 14:47:00.485188"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Coco"], ["description", "cat wearing a mask"], ["price", 3.99], ["image_url", "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&rect=37%2C29%2C4955%2C3293&q=45&auto=format&w=926&fit=clip"], ["created_at", "2020-09-01 14:47:00.489284"], ["updated_at", "2020-09-01 14:47:00.489284"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Boo"], ["description", "cat with owner"], ["price", 2.99], ["image_url", "https://www.usnews.com/dims4/USNEWS/2e684c6/2147483647/thumbnail/970x647/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fa5%2F58%2F9c24a25e42bcb0385b7234d01feb%2F200409-stock.jpg"], ["created_at", "2020-09-01 14:47:00.492382"], ["updated_at", "2020-09-01 14:47:00.492382"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Nala"], ["description", "cat observing"], ["price", 4.99], ["image_url", "https://www.vets4pets.com/siteassets/species/cat/close-up-of-cat-looking-up.jpg?w=585&scale=down"], ["created_at", "2020-09-01 14:47:00.494994"], ["updated_at", "2020-09-01 14:47:00.494994"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mItem Create (1.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Patrick"], ["description", "kitten showing paw"], ["price", 5.99], ["image_url", "https://www.humanesociety.org/sites/default/files/styles/1441x612/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=MnaVHwPi"], ["created_at", "2020-09-01 14:47:00.501837"], ["updated_at", "2020-09-01 14:47:00.501837"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Mary"], ["description", "cat with sunglasses"], ["price", 9.99], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-cat-wearing-sunglasses-while-sitting-royalty-free-image-1571755145.jpg?crop=0.670xw:1.00xh;0.147xw,0&resize=768:*"], ["created_at", "2020-09-01 14:47:00.505312"], ["updated_at", "2020-09-01 14:47:00.505312"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Bella"], ["description", "cat with litter"], ["price", 7.99], ["image_url", "https://images.theconversation.com/files/292611/original/file-20190916-19068-nz1hf2.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"], ["created_at", "2020-09-01 14:47:00.508066"], ["updated_at", "2020-09-01 14:47:00.508066"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Snow"], ["description", "cat with mask and graphic background"], ["price", 9.99], ["image_url", "https://pyxis.nymag.com/v1/imgs/671/fdb/29fd522da5c5c7a2a143df34f61a75c482-cat-coronavirus.rsquare.w700.jpg"], ["created_at", "2020-09-01 14:47:00.510476"], ["updated_at", "2020-09-01 14:47:00.510476"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Chacha"], ["description", "cat with a leash"], ["price", 7.99], ["image_url", "https://bluebuffalo.com/globalassets/00-redesign/articles/cat-articles/how-to-leash-train-your-cat/articleimage-catleash-header.jpg"], ["created_at", "2020-09-01 14:47:00.512739"], ["updated_at", "2020-09-01 14:47:00.512739"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dino"], ["description", "cat with aleash observing"], ["price", 4.99], ["image_url", "https://3xnhi43vikn244hoyg160zl4-wpengine.netdna-ssl.com/wp-content/uploads/2019/01/15276403_web1_190123-VNE-CatLeash-1200x801.jpg"], ["created_at", "2020-09-01 14:47:00.514931"], ["updated_at", "2020-09-01 14:47:00.514931"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Tony"], ["description", "cat sitting"], ["price", 2.99], ["image_url", "https://www.washingtonian.com/wp-content/uploads/2019/02/milada-vigerova-1295750-unsplash-994x1491.jpg"], ["created_at", "2020-09-01 14:47:00.517120"], ["updated_at", "2020-09-01 14:47:00.517120"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "potato6@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "potato6@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "flower.gl@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "flower.gl@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "robert.kevin@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "robert.kevin@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "basket.hover@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "basket.hover@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "violet.sun@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "violet.sun@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "paul896@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "paul896@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chloe7899@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "chloe7899@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "patrick393223@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "patrick393223@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "verclop@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "verclop@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "toiucnds@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "toiucnds@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:38
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:44
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "flower.gl@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "flower.gl@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mCart Create (0.5ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.109737"], ["updated_at", "2020-09-01 14:47:03.109737"]]
+  ↳ db/seeds.rb:44
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "robert.kevin@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "robert.kevin@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mCart Create (0.2ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.114852"], ["updated_at", "2020-09-01 14:47:03.114852"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "basket.hover@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:46
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "basket.hover@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:46
+  [1m[36mCart Create (0.4ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.119571"], ["updated_at", "2020-09-01 14:47:03.119571"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "violet.sun@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "violet.sun@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mCart Create (0.5ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.126038"], ["updated_at", "2020-09-01 14:47:03.126038"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "paul896@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "paul896@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCart Create (0.3ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.131006"], ["updated_at", "2020-09-01 14:47:03.131006"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chloe7899@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "chloe7899@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mCart Create (0.2ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.135636"], ["updated_at", "2020-09-01 14:47:03.135636"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "patrick393223@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "patrick393223@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mCart Create (0.3ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.141934"], ["updated_at", "2020-09-01 14:47:03.141934"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "verclop@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "verclop@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mCart Create (0.3ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.146661"], ["updated_at", "2020-09-01 14:47:03.146661"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:52
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "toiucnds@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "toiucnds@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mCart Create (0.3ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.151566"], ["updated_at", "2020-09-01 14:47:03.151566"]]
+  ↳ db/seeds.rb:52
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:52
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mItemCart Create (0.5ms)[0m  [1m[32mINSERT INTO "item_carts" ("item_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["item_id", 3], ["created_at", "2020-09-01 14:47:03.165262"], ["updated_at", "2020-09-01 14:47:03.165262"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mItemCart Create (0.3ms)[0m  [1m[32mINSERT INTO "item_carts" ("cart_id", "item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cart_id", 1], ["item_id", 9], ["created_at", "2020-09-01 14:47:03.168693"], ["updated_at", "2020-09-01 14:47:03.168693"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:63
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "item_carts" ON "items"."id" = "item_carts"."item_id" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 1]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "flower.gl@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "flower.gl@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.211548"], ["updated_at", "2020-09-01 14:47:03.211548"]]
+  ↳ db/seeds.rb:64
+  [1m[36mItemOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "item_orders" ("item_id", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_id", 9], ["order_id", 1], ["created_at", "2020-09-01 14:47:03.213074"], ["updated_at", "2020-09-01 14:47:03.213074"]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "item_carts" ON "items"."id" = "item_carts"."item_id" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 2]]
+  ↳ db/seeds.rb:65
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "robert.kevin@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "robert.kevin@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.219883"], ["updated_at", "2020-09-01 14:47:03.219883"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "item_carts" ON "items"."id" = "item_carts"."item_id" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 3]]
+  ↳ db/seeds.rb:66
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "basket.hover@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "basket.hover@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.227834"], ["updated_at", "2020-09-01 14:47:03.227834"]]
+  ↳ db/seeds.rb:66
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:66
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "item_carts" ON "items"."id" = "item_carts"."item_id" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 4]]
+  ↳ db/seeds.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:67
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "violet.sun@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "violet.sun@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.233677"], ["updated_at", "2020-09-01 14:47:03.233677"]]
+  ↳ db/seeds.rb:67
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:67
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "item_carts" ON "items"."id" = "item_carts"."item_id" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 5]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "paul896@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "paul896@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.241276"], ["updated_at", "2020-09-01 14:47:03.241276"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:68
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "item_carts" ON "items"."id" = "item_carts"."item_id" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 6]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chloe7899@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "chloe7899@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.247039"], ["updated_at", "2020-09-01 14:47:03.247039"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "item_carts" ON "items"."id" = "item_carts"."item_id" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 7]]
+  ↳ db/seeds.rb:70
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "patrick393223@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:70
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "patrick393223@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:70
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.253347"], ["updated_at", "2020-09-01 14:47:03.253347"]]
+  ↳ db/seeds.rb:70
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "item_carts" ON "items"."id" = "item_carts"."item_id" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 8]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:71
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "verclop@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:71
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "verclop@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:71
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.261630"], ["updated_at", "2020-09-01 14:47:03.261630"]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:71
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "item_carts" ON "items"."id" = "item_carts"."item_id" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 9]]
+  ↳ db/seeds.rb:72
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:72
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "toiucnds@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:72
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "toiucnds@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:72
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-01 14:47:03.267664"], ["updated_at", "2020-09-01 14:47:03.267664"]]
+  ↳ db/seeds.rb:72
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:72
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:47:24 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/maxime/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:18
+  Rendered items/_item.html.erb (1.0ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (1.1ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/index.html.erb within layouts/application (24.2ms)
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered layouts/_alert.html.erb (0.3ms)
+Completed 200 OK in 3937ms (Views: 3923.0ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:48:10 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:18
+  Rendered items/_item.html.erb (1.0ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (3.8ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.7ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/index.html.erb within layouts/application (21.4ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_alert.html.erb (0.3ms)
+Completed 200 OK in 47ms (Views: 44.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:51:18 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:18
+  Rendered items/_item.html.erb (2.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.6ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/index.html.erb within layouts/application (38.8ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_alert.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 109.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:51:54 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:18
+  Rendered items/_item.html.erb (1.7ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.6ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/index.html.erb within layouts/application (26.9ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+Completed 200 OK in 80ms (Views: 76.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:53:57 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:7
+  Rendered items/_item.html.erb (0.8ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/index.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_alert.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:54:16 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:7
+  Rendered items/_item.html.erb (0.9ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/index.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_alert.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:54:23 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:7
+  Rendered items/_item.html.erb (1.6ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/index.html.erb within layouts/application (30.4ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+  Rendered layouts/_alert.html.erb (0.6ms)
+Completed 200 OK in 83ms (Views: 80.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:55:16 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:7
+  Rendered items/_item.html.erb (5.8ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/index.html.erb within layouts/application (27.6ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  Rendered layouts/_alert.html.erb (0.6ms)
+Completed 200 OK in 74ms (Views: 71.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:55:27 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:7
+  Rendered items/_item.html.erb (1.5ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.6ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/index.html.erb within layouts/application (29.6ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+Completed 200 OK in 92ms (Views: 87.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:55:35 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:7
+  Rendered items/_item.html.erb (3.1ms)
+  Rendered items/_item.html.erb (0.7ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.9ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/index.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+Completed 200 OK in 91ms (Views: 87.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 16:55:45 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:7
+  Rendered items/_item.html.erb (1.9ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.9ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/index.html.erb within layouts/application (31.5ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+Completed 200 OK in 92ms (Views: 87.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 17:02:18 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:6
+  Rendered items/_item.html.erb (1.7ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/index.html.erb within layouts/application (32.4ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_alert.html.erb (0.3ms)
+Completed 200 OK in 4174ms (Views: 4167.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 17:02:52 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:6
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/index.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_alert.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 17:03:12 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (3.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:9
+  Rendered items/_item.html.erb (1.2ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/index.html.erb within layouts/application (25.2ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_alert.html.erb (0.3ms)
+Completed 200 OK in 4116ms (Views: 4111.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 17:03:43 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:9
+  Rendered items/_item.html.erb (0.8ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/index.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_alert.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 17:04:04 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:9
+  Rendered items/_item.html.erb (0.9ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/index.html.erb within layouts/application (20.3ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_alert.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 17:04:09 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:9
+  Rendered items/_item.html.erb (0.8ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/index.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 17:04:16 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:9
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/_item.html.erb (0.8ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/_item.html.erb (0.1ms)
+  Rendered items/index.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_alert.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-01 17:07:49 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:9
+  Rendered items/_item.html.erb (224.9ms)
+  Rendered items/index.html.erb within layouts/application (227.2ms)
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `items' for #<#<Class:0x00007fd2d03d6288>:0x00007fd2d28638f8>
+Did you mean?  item
+               @items):
+    14:         <li class="list-group-item">$ <%=item.price%></li>
+    15:       </ul>
+    16:     <div class="card-body">
+    17:       <%= link_to "More about it", item_path(items, item.id)%>
+    18:       <a href="#top" class="card-link">Back to the top</a>
+    19:     </div>
+    20:   </div>
+  
+app/views/items/_item.html.erb:17:in `_app_views_items__item_html_erb___211472630363605634_70271725856360'
+app/views/items/index.html.erb:10:in `block in _app_views_items_index_html_erb__3988008394771034278_70271725953680'
+app/views/items/index.html.erb:9:in `_app_views_items_index_html_erb__3988008394771034278_70271725953680'
+Started GET "/" for 127.0.0.1 at 2020-09-01 17:08:12 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:9
+  Rendered items/_item.html.erb (1.8ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (2.6ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.2ms)
+  Rendered items/index.html.erb within layouts/application (27.4ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_alert.html.erb (0.4ms)
+Completed 200 OK in 65ms (Views: 61.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items/1.1" for 127.0.0.1 at 2020-09-01 17:08:15 +0200
+Processing by ItemsController#show as 
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:19
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:12
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_alert.html.erb (0.4ms)
+Completed 200 OK in 88ms (Views: 63.6ms | ActiveRecord: 2.0ms)
+
+
