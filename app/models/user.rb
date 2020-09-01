@@ -19,5 +19,11 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6}, presence: true, on: :update, if: :encrypted_password_changed?
   validates :password_confirmation, length: {minimum: 6}, presence: true, on: :update, if: :encrypted_password_changed?
 
-
+  def full_name
+    if self.first_name.nil? && self.last_name.nil?
+        return self.email.split('@')[0]
+    else
+     return "#{self.first_name.capitalize unless self.first_name.nil?} #{self.last_name.capitalize unless self.last_name.nil?}"
+    end
+  end
 end
