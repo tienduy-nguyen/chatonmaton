@@ -20,10 +20,12 @@
         <td><%= item.title %></td>
         <td><%= truncate(item.description, length: 20) %></td>
         <td><%= item.price %></td>
-        <td><%= link_to 'Add to cart', carts_path(id: current_user.cart.id, item_id: item.id) , method: :post %></td>
+        <% if user_signed_in? %>
+                  <td><%= link_to 'Add to cart', carts_path(id: current_user.cart.id, item_id: item.id) , method: :post %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
