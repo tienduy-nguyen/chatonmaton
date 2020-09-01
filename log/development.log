@@ -5085,3 +5085,850 @@ Processing by CartsController#index as HTML
 Completed 200 OK in 43ms (Views: 38.4ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/carts" for ::1 at 2020-09-01 11:57:47 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:   </thead>
+    16: 
+    17:   <tbody>
+    18:     <% @items.each do |item_cart| %>
+    19:       <tr>
+    20:         <td><%= item_cart.item.title %></td>
+    21:         <td><%= item_cart.item.price %></td>
+  
+app/views/carts/index.html.erb:18:in `_app_views_carts_index_html_erb___1289180507317135084_70166921399740'
+Started GET "/carts" for ::1 at 2020-09-01 11:59:05 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:   </thead>
+    16: 
+    17:   <tbody>
+    18:     <% @items.each do |item| %>
+    19:       <tr>
+    20:         <td><%= item.title %></td>
+    21:         <td><%= item.price %></td>
+  
+app/views/carts/index.html.erb:18:in `_app_views_carts_index_html_erb___1289180507317135084_70166918348120'
+Started GET "/carts" for ::1 at 2020-09-01 11:59:16 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:   </thead>
+    16: 
+    17:   <tbody>
+    18:     <% @items.each do |item| %>
+    19:       <tr>
+    20:         <td><%= item.title %></td>
+    21:         <td><%= item.price %></td>
+  
+app/views/carts/index.html.erb:18:in `_app_views_carts_index_html_erb___1289180507317135084_70166983021580'
+Started GET "/carts" for ::1 at 2020-09-01 12:01:47 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 8.1ms)
+
+
+  
+NameError (undefined local variable or method `cart' for #<CartsController:0x00007fa204d4f578>
+Did you mean?  @cart):
+  
+app/controllers/carts_controller.rb:7:in `index'
+Started GET "/carts" for ::1 at 2020-09-01 12:02:09 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 7.0ms)
+
+
+  
+NoMethodError (undefined method `itemcarts' for #<Cart:0x0000555c4004ee48>
+Did you mean?  item_carts
+               item_carts=):
+  
+app/controllers/carts_controller.rb:7:in `index'
+Started GET "/carts" for ::1 at 2020-09-01 12:02:25 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 5.2ms)
+
+
+  
+NoMethodError (undefined method `itemCarts' for #<Cart:0x00007fa20740abe0>
+Did you mean?  item_carts
+               item_carts=):
+  
+app/controllers/carts_controller.rb:7:in `index'
+Started GET "/carts" for ::1 at 2020-09-01 12:02:35 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 10.9ms)
+
+
+  
+NoMethodError (undefined method `item_cart' for #<Cart:0x00007fa20c1f9450>
+Did you mean?  item_carts
+               item_carts=):
+  
+app/controllers/carts_controller.rb:7:in `index'
+Started GET "/carts" for ::1 at 2020-09-01 12:03:51 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.2ms)[0m  [1m[34mSELECT  "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1 LIMIT $2[0m  [["cart_id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:7
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 9.9ms)
+
+
+  
+NoMethodError (undefined method `each' for #<ItemCart:0x00007fa2075f56a8>):
+  
+app/controllers/carts_controller.rb:8:in `index'
+Started GET "/carts" for ::1 at 2020-09-01 12:04:19 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.1ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  Rendered layouts/_alert.html.erb (1.0ms)
+Completed 200 OK in 129ms (Views: 59.1ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/carts" for ::1 at 2020-09-01 12:07:16 +0200
+  
+SyntaxError (/mnt/workspace/01-GITHUB/09-The Hacking Project/chatonmaton/app/controllers/carts_controller.rb:15: syntax error, unexpected keyword_end
+  end
+  ^~~
+/mnt/workspace/01-GITHUB/09-The Hacking Project/chatonmaton/app/controllers/carts_controller.rb:59: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/carts_controller.rb:15: syntax error, unexpected keyword_end
+app/controllers/carts_controller.rb:59: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/carts" for ::1 at 2020-09-01 12:07:26 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.2ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  Rendered layouts/_alert.html.erb (0.8ms)
+Completed 200 OK in 123ms (Views: 39.9ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/routes" for ::1 at 2020-09-01 12:13:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/info/routes?path=item" for ::1 at 2020-09-01 12:13:13 +0200
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"item"}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-09-01 12:17:30 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:18
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:23
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:23
+  Rendered items/index.html.erb within layouts/application (94.9ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_alert.html.erb (0.7ms)
+Completed 200 OK in 144ms (Views: 122.2ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/carts" for ::1 at 2020-09-01 12:17:32 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.4ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 5.3ms)
+
+
+  
+NameError (undefined local variable or method `item' for #<CartsController:0x00007fa204e36d60>
+Did you mean?  @items):
+  
+app/controllers/carts_controller.rb:10:in `block in index'
+app/controllers/carts_controller.rb:9:in `index'
+Started GET "/carts" for ::1 at 2020-09-01 12:17:45 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.2ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 13.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:   </thead>
+    16: 
+    17:   <tbody>
+    18:     <% @item_carts.each do |item_cart| %>
+    19:       <tr>
+    20:         <td><%= item_cart.item.title %></td>
+    21:         <td><%= item_cart.item.price %></td>
+  
+app/views/carts/index.html.erb:18:in `_app_views_carts_index_html_erb___1289180507317135084_70166982830880'
+Started GET "/carts" for ::1 at 2020-09-01 12:18:00 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.2ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+Completed 200 OK in 118ms (Views: 41.3ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/carts" for ::1 at 2020-09-01 12:30:26 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.3ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered layouts/_alert.html.erb (0.7ms)
+Completed 200 OK in 123ms (Views: 50.2ms | ActiveRecord: 14.8ms)
+
+
+Started DELETE "/carts?id=73&item_cart_id=2" for ::1 at 2020-09-01 12:30:33 +0200
+  
+ActionController::RoutingError (No route matches [DELETE] "/carts"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/carts" for ::1 at 2020-09-01 12:31:25 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.4ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_alert.html.erb (0.8ms)
+Completed 200 OK in 130ms (Views: 54.3ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/route" for ::1 at 2020-09-01 12:31:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/route"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/info/routes?path=car" for ::1 at 2020-09-01 12:31:55 +0200
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"car"}
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=cart" for ::1 at 2020-09-01 12:31:56 +0200
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"cart"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-09-01 12:32:29 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:23
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:23
+  Rendered items/index.html.erb within layouts/application (71.7ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+  Rendered layouts/_alert.html.erb (0.6ms)
+Completed 200 OK in 126ms (Views: 110.4ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/carts" for ::1 at 2020-09-01 12:32:31 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.2ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navbar.html.erb (3.1ms)
+  Rendered layouts/_alert.html.erb (0.7ms)
+Completed 200 OK in 115ms (Views: 78.3ms | ActiveRecord: 5.4ms)
+
+
+Started DELETE "/carts?id=73&item_cart_id=2" for ::1 at 2020-09-01 12:33:11 +0200
+  
+ActionController::RoutingError (No route matches [DELETE] "/carts"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-09-01 12:35:15 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:18
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:23
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:23
+  Rendered items/index.html.erb within layouts/application (67.9ms)
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+Completed 200 OK in 139ms (Views: 136.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/carts" for ::1 at 2020-09-01 12:35:16 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.3ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_params' for {:item_cart_id=>2}:Hash
+Did you mean?  to_param):
+    19:       <tr>
+    20:         <td><%= item_cart.item.title %></td>
+    21:         <td><%= item_cart.item.price %></td>
+    22:         <td><%= link_to 'Destroy', current_user.cart.id, params: {item_cart_id: item_cart.id}.to_params  ,method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    23:        
+    24:       </tr>
+    25:     <% end %>
+  
+app/views/carts/index.html.erb:22:in `block in _app_views_carts_index_html_erb___1289180507317135084_70166926321180'
+app/views/carts/index.html.erb:18:in `_app_views_carts_index_html_erb___1289180507317135084_70166926321180'
+Started GET "/carts" for ::1 at 2020-09-01 12:35:27 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.4ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_model' for 73:Integer
+Did you mean?  to_yaml):
+    19:       <tr>
+    20:         <td><%= item_cart.item.title %></td>
+    21:         <td><%= item_cart.item.price %></td>
+    22:         <td><%= link_to 'Destroy', current_user.cart.id, params: {item_cart_id: item_cart.id}.to_param  ,method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    23:        
+    24:       </tr>
+    25:     <% end %>
+  
+app/views/carts/index.html.erb:22:in `block in _app_views_carts_index_html_erb___1289180507317135084_70166915542440'
+app/views/carts/index.html.erb:18:in `_app_views_carts_index_html_erb___1289180507317135084_70166915542440'
+Started GET "/carts" for ::1 at 2020-09-01 12:35:39 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.4ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_model' for 73:Integer
+Did you mean?  to_yaml):
+    19:       <tr>
+    20:         <td><%= item_cart.item.title %></td>
+    21:         <td><%= item_cart.item.price %></td>
+    22:         <td><%= link_to 'Destroy', current_user.cart.id, params: {item_cart_id: item_cart.id}.to_param ,method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    23:        
+    24:       </tr>
+    25:     <% end %>
+  
+app/views/carts/index.html.erb:22:in `block in _app_views_carts_index_html_erb___1289180507317135084_70166921840220'
+app/views/carts/index.html.erb:18:in `_app_views_carts_index_html_erb___1289180507317135084_70166921840220'
+Started GET "/carts" for ::1 at 2020-09-01 12:36:45 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.4ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.8ms)
+
+
+  
+SyntaxError (/mnt/workspace/01-GITHUB/09-The Hacking Project/chatonmaton/app/views/carts/index.html.erb:22: syntax error, unexpected tLABEL
+...cart_id: item_cart.id), method: :delete, data: { confirm: 'A...
+...                        ^~~~~~~
+/mnt/workspace/01-GITHUB/09-The Hacking Project/chatonmaton/app/views/carts/index.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+... { confirm: 'Are you sure?' } );@output_buffer.safe_append='...
+...                              ^
+/mnt/workspace/01-GITHUB/09-The Hacking Project/chatonmaton/app/views/carts/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/carts/index.html.erb:22: syntax error, unexpected tLABEL
+app/views/carts/index.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+app/views/carts/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/carts" for ::1 at 2020-09-01 12:37:17 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.1ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  Rendered layouts/_alert.html.erb (0.7ms)
+Completed 200 OK in 52ms (Views: 43.8ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/carts/73?item_cart_id=2" for ::1 at 2020-09-01 12:37:20 +0200
+Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZcmKx3OCeuh0Va+gbdYTHb9KXkNOGp2Ci38yyfE1lFYGRAowMDrMEtw/xLlPbdwyuiv9iOnNruEAth4WZ3dNcA==", "item_cart_id"=>"2", "id"=>"73"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mItemCart Load (0.2ms)[0m  [1m[34mSELECT  "item_carts".* FROM "item_carts" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:48
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/carts_controller.rb:49:in `destroy'
+Started DELETE "/carts/73?item_cart_id=2" for ::1 at 2020-09-01 12:38:55 +0200
+Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZcmKx3OCeuh0Va+gbdYTHb9KXkNOGp2Ci38yyfE1lFYGRAowMDrMEtw/xLlPbdwyuiv9iOnNruEAth4WZ3dNcA==", "item_cart_id"=>"2", "id"=>"73"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 29ms (ActiveRecord: 6.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ItemCart without an ID):
+  
+app/controllers/carts_controller.rb:48:in `destroy'
+Started DELETE "/carts/73?item_cart_id=2" for ::1 at 2020-09-01 12:39:21 +0200
+Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZcmKx3OCeuh0Va+gbdYTHb9KXkNOGp2Ci38yyfE1lFYGRAowMDrMEtw/xLlPbdwyuiv9iOnNruEAth4WZ3dNcA==", "item_cart_id"=>"2", "id"=>"73"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mItemCart Load (0.2ms)[0m  [1m[34mSELECT  "item_carts".* FROM "item_carts" WHERE "item_carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:48
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 6.0ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/carts_controller.rb:49:in `destroy'
+Started GET "/" for ::1 at 2020-09-01 12:39:30 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:23
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:23
+  Rendered items/index.html.erb within layouts/application (66.5ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+Completed 200 OK in 124ms (Views: 104.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/carts" for ::1 at 2020-09-01 12:39:31 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.3ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_alert.html.erb (0.6ms)
+Completed 200 OK in 76ms (Views: 60.0ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/carts/73?item_cart_id=2" for ::1 at 2020-09-01 12:39:36 +0200
+Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7QATc6kLzfU5IObEU2qkwi+5r/8lzF3vHp6svbCg93yOjZOE6rN7D5FKjd1x0WvtKtgMNIIbboyVV4BiJuIuWg==", "item_cart_id"=>"2", "id"=>"73"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mItemCart Load (0.6ms)[0m  [1m[34mSELECT  "item_carts".* FROM "item_carts" WHERE "item_carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:48
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/carts_controller.rb:49:in `destroy'
+Started DELETE "/carts/73?item_cart_id=2" for ::1 at 2020-09-01 12:41:57 +0200
+Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7QATc6kLzfU5IObEU2qkwi+5r/8lzF3vHp6svbCg93yOjZOE6rN7D5FKjd1x0WvtKtgMNIIbboyVV4BiJuIuWg==", "item_cart_id"=>"2", "id"=>"73"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mItemCart Load (0.2ms)[0m  [1m[34mSELECT  "item_carts".* FROM "item_carts" WHERE "item_carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:48
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:49
+  [1m[36mItemCart Destroy (0.3ms)[0m  [1m[31mDELETE FROM "item_carts" WHERE "item_carts"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/carts_controller.rb:49
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:49
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 10.8ms)
+
+
+  
+NameError (undefined local variable or method `cards_path' for #<CartsController:0x00007fa205ad21c8>
+Did you mean?  carts_path
+               cart_path):
+  
+app/controllers/carts_controller.rb:54:in `destroy'
+Started DELETE "/carts/73?item_cart_id=2" for ::1 at 2020-09-01 12:42:07 +0200
+Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7QATc6kLzfU5IObEU2qkwi+5r/8lzF3vHp6svbCg93yOjZOE6rN7D5FKjd1x0WvtKtgMNIIbboyVV4BiJuIuWg==", "item_cart_id"=>"2", "id"=>"73"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mItemCart Load (0.3ms)[0m  [1m[34mSELECT  "item_carts".* FROM "item_carts" WHERE "item_carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:48
+Completed 404 Not Found in 30ms (ActiveRecord: 7.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ItemCart with 'id'=2):
+  
+app/controllers/carts_controller.rb:48:in `destroy'
+Started GET "/" for ::1 at 2020-09-01 12:42:14 +0200
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:23
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:23
+  Rendered items/index.html.erb within layouts/application (69.7ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_alert.html.erb (0.6ms)
+Completed 200 OK in 119ms (Views: 106.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/carts" for ::1 at 2020-09-01 12:42:16 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.3ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navbar.html.erb (4.9ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+Completed 200 OK in 69ms (Views: 53.7ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/carts/73?item_cart_id=4" for ::1 at 2020-09-01 12:42:19 +0200
+Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2pBFZq+besmMcyZRv4Ljgw+YjBt56urZGxyjBrYEeSq5HcWR7CPMMyQZTUidOSysCvkv0N492bqQ1Y/ZIEagDA==", "item_cart_id"=>"4", "id"=>"73"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mItemCart Load (0.3ms)[0m  [1m[34mSELECT  "item_carts".* FROM "item_carts" WHERE "item_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:48
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:49
+  [1m[36mItemCart Destroy (0.3ms)[0m  [1m[31mDELETE FROM "item_carts" WHERE "item_carts"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/carts_controller.rb:49
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:49
+Redirected to http://localhost:3000/carts
+Completed 302 Found in 11ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/carts" for ::1 at 2020-09-01 12:42:19 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.1ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 73]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:10
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_alert.html.erb (0.9ms)
+Completed 200 OK in 68ms (Views: 57.8ms | ActiveRecord: 0.6ms)
+
+

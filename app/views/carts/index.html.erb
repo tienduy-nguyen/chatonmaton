@@ -1,2 +1,39 @@
-<h1>Carts#index</h1>
-<p>Find me in app/views/carts/index.html.erb</p>
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></h1>
+
+<table >
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Image url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item_carts.each do |item_cart| %>
+      <tr>
+        <td><%= item_cart.item.title %></td>
+        <td><%= item_cart.item.price %></td>
+        <td><%= link_to 'Destroy', cart_path(id: current_user.cart.id, item_cart_id: item_cart.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       
+      </tr>
+    <% end %>
+    <tr>
+        <td>
+            <td>Total</td>
+            <td><%= @total %></td>
+        </td>
+    <tr>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_path %>
+
+</div>

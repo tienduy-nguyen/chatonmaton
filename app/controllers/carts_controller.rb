@@ -1,7 +1,15 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @carts = Cart.all
+    @cart = current_user.cart
+    
+    @items = []
+    @total = 0
+    @item_carts = ItemCart.where(cart: @cart)
+    @item_carts.each do |item_cart|
+      @total = @total + item_cart.item.price
+    end
+
   end
   
   def show
@@ -35,8 +43,16 @@ class CartsController < ApplicationController
 
   # DELETE 
   def destroy
-    @event.destroy
-    redirect_to root_path
+    puts "------------------"
+    puts params
+    @item_cart = ItemCart.find(params[:item_cart_id])
+    if @item_cart.destroy
+      flash[:success] = "Remove successfully an item"
+    else
+      flash[:error] = "An error has been occured!"
+    end
+    redirect_to carts_path
+
   end
 
   private
