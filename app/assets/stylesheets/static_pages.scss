@@ -18,18 +18,18 @@
 
 .carousel-item-first {
   background: {
-    image: asset_url('slide-01');
+    image: asset_url("cat1");
   }
 }
 .carousel-item-second {
   background: {
-    image: asset_url('slide-02');
+    image: asset_url("cat2");
   }
 }
 
 .carousel-item-third {
   background: {
-    image: asset_url('slide-03');
+    image: asset_url("cat3");
   }
 }
 
@@ -62,7 +62,7 @@
 
 .how-bor2::before,
 .how-bor1::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   z-index: -1;
@@ -114,7 +114,7 @@
 .contact-title {
   padding-top: 40px;
   background: {
-    image: asset_url('bg-01');
+    image: asset_url("bg-01");
   }
   background-size: cover;
   background-position: center center;
