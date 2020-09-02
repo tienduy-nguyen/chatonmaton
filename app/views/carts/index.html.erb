@@ -1,16 +1,22 @@
-
 <section>
-   <div class="container">
-      <h1><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></h1>
+   <div class="container mt-5">
 
-      <table class="table-primary">
+   <% if  @cart.is_empty? %>
+    <div class="text-center">
+      <span>Your cart is empty...</span> <br>
+      <a class="btn btn-outline-primary mt-3" href="<%= items_path %>">Back to shopping</a>
+
+    </div>
+    <% else %>
+      <!-- Table of cart -->
+       <table class="table-primary">
 
           <thead>
             <div class="row" style="border: 0.15em solid">
               <p class="col-2">Article</p>
               <p class="col-2">Description</p>
-              <p class="col-2">Prix</p>
-              <p class="col-2">Aperçu</p>
+              <p class="col-2">Price</p>
+              <p class="col-2">Quick overview</p>
             </div>
           </thead>
 
@@ -23,7 +29,7 @@
                 <img src="<%= item_cart.item.image_url %>" alt="alternatetext" class="col-2">
                 <% if user_signed_in? %>
                   <i class="far fa-trash-alt ml-5"></i>
-                  <p class="col-3"><%= link_to 'Supprimer du panier', cart_path(id: current_user.cart.id, item_cart_id: item_cart.id), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                  <p class="col-3"><%= link_to 'Clear item', cart_path(id: current_user.cart.id, item_cart_id: item_cart.id), method: :delete, data: { confirm: 'Are you sure?' } %></p>
                 <% end %>
               </div>
             <% end %>
@@ -34,9 +40,11 @@
             <p class="col-2"><strong>Total</strong></p>
             <p class="col-2"><strong><%= @total %></strong></p>
 
-            <p class="btn-secondary col-3 text-center"><%= link_to 'Valider le panier', orders_path , method: :post%></p>
+            <p class="btn-secondary col-3 text-center"><%= link_to 'Go to payment', orders_path , method: :post%></p>
           </div>
         </tbody>
       </table>
-    </div>
+   <% end  %>
+     
+  </div>
 </section>
