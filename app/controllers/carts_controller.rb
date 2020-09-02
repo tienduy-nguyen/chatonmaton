@@ -18,7 +18,7 @@ class CartsController < ApplicationController
 
   # POST
   def create
-    @cart = Cart.find(params[:id])
+    @cart = Cart.find(current_user.cart.id)
     @item = Item.find(params[:item_id])
     item_cart = ItemCart.new(cart: @cart, item: @item)
     if item_cart.save
