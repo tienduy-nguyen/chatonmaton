@@ -1,41 +1,42 @@
 
+<section>
+   <div class="container">
+      <h1><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></h1>
 
-<h1><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></h1>
+      <table class="table-primary">
 
-<table >
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Image url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <thead>
+            <div class="row" style="border: 0.15em solid">
+              <p class="col-2">Article</p>
+              <p class="col-2">Description</p>
+              <p class="col-2">Prix</p>
+              <p class="col-2">Aperçu</p>
+            </div>
+          </thead>
 
-  <tbody>
-    <% @item_carts.each do |item_cart| %>
-      <tr>
-        <td><%= item_cart.item.title %></td>
-        <td><%= item_cart.item.price %></td>
-        <% if user_signed_in? %>
-        <td><%= link_to 'Destroy', cart_path(id: current_user.cart.id, item_cart_id: item_cart.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <tbody>
+          <% @item_carts.each do |item_cart| %>
+            <div class="row m-2">
+                <p class="col-2"><%= item_cart.item.title %></p>
+                <p class="col-2"><%= item_cart.item.description %></p>
+                <p class="col-2"><%= item_cart.item.price %></p>
+                <img src="<%= item_cart.item.image_url %>" alt="alternatetext" class="col-2">
+                <% if user_signed_in? %>
+                  <i class="far fa-trash-alt ml-5"></i>
+                  <p class="col-3"><%= link_to 'Supprimer du panier', cart_path(id: current_user.cart.id, item_cart_id: item_cart.id), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <% end %>
+              </div>
+            <% end %>
 
-        <% end %>
-       
-      </tr>
-    <% end %>
-  
-    <tr>
-            <td><strong>Total</strong></td>
-            <td><strong><%= @total %></strong></td>
-    <tr>
-  </tbody>
-</table>
+          <div class="row m-2" style="border: 0.05em solid">
+            <p class="col-2"></p>
+            <p class="col-2"></p>
+            <p class="col-2"><strong>Total</strong></p>
+            <p class="col-2"><strong><%= @total %></strong></p>
 
-<br>
-
-
-<%= link_to 'Checkout', orders_path , method: :post%>
-
-</div>
+            <p class="btn-secondary col-3 text-center"><%= link_to 'Valider le panier', orders_path , method: :post%></p>
+          </div>
+        </tbody>
+      </table>
+    </div>
+</section>
