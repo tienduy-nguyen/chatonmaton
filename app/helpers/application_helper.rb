@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def hide_footer
-    current_page?(root_path) ? "" : "footer-fixed"
+    current_page?(root_path) ? "d-none" : "footer-fixed"
   end
 
   def flash_class(level)
