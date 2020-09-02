@@ -2,8 +2,7 @@
   <div class="row">
     <div class="col-12">
     <% if @item.image_url.attached? %>
-      <img src="<%= @item.image_url %>" alt="tets" class="img-thumbnail">
-
+        <%= image_tag @item.image_url, alt: 'avatar', class: "img-thumbnail" %>
     <% else %>
       <img src="<%= asset_path('cat-default')%>" alt="tets" class="img-thumbnail">
     <% end %>

@@ -19,9 +19,13 @@ class ItemsController < ApplicationController
 
   def update
     if current_user.is_admin 
+
+      puts "----------------------------------"
+      puts item_params
+
       if @item.update(item_params)
-        redirect_to items_path
         flash[:success] = "Update an item"
+        redirect_to items_path
       else
         render :edit
         flash[:error] = "An error has been occured"
