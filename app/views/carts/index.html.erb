@@ -1,37 +1,64 @@
-<h1><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></h1>
+<section class="cart-section">
+   <div class="container mt-5">
 
-<table >
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Image url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+   <% if  @cart.is_empty? %>
+    <div class="text-center">
+      <span>Your cart is empty...</span> <br>
+      <a class="btn btn-outline-primary mt-3" href="<%= items_path %>">Back to shopping</a>
 
-  <tbody>
-    <% @item_carts.each do |item_cart| %>
-      <tr>
-        <td><%= item_cart.item.title %></td>
-        <td><%= item_cart.item.price %></td>
-        <% if user_signed_in? %>
-        <td><%= link_to 'Destroy', cart_path(id: current_user.cart.id, item_cart_id: item_cart.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </div>
+    <% else %>
+      <!-- Table of cart -->
+       <table class="table-primary">
 
-        <% end %>
+          <thead>
+            <div class="row" style="border: 0.15em solid">
+              <p class="col-2">Article</p>
+              <p class="col-4 ">Description</p>
+              <p class="col-2 ">Price</p>
+              <p class="col-2 ">Quick overview</p>
+            </div>
+          </thead>
 
-      </tr>
-    <% end %>
+        <tbody>
+          <% @item_carts.each do |item_cart| %>
+            <div class="row mt-2 border-bottom">
+                <p class="col-2"><%= item_cart.item.title %></p>
+                <p class="col-4"><%= truncate(item_cart.item.description, length: 50) %></p>
+                <p class="col-2">$<%= item_cart.item.price %></p>
+                <%= link_to item_path(item_cart.item), class:"col-2" do %>
+                    <img src="<%= item_cart.item.image_url %>"
+                     alt="alternatetext"
+                     style="max-height: 120px;max-width: 120px;"
+                      >
+                <% end %>
 
-    <tr>
-            <td><strong>Total</strong></td>
-            <td><strong><%= @total %></strong></td>
-    <tr>
-  </tbody>
-</table>
 
-<br>
+                <% if user_signed_in? %>
+                  <p class="col-2 ml-auto">
+                  <%= link_to cart_path(id: current_user.cart.id, item_cart_id: item_cart.id),
+                   method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="far fa-trash-alt text-danger"></i> Remove item
+                  <% end %>
+                   </p>
+                <% end %>
+              </div>
+            <% end %>
 
+        </tbody>
+        <tfoot>
+          <div class="row mt-5" style="border: 0.05em solid">
+            <p class="col-2"></p>
+            <p class="col-2"></p>
+            <p class="col-2"><strong>Total</strong></p>
+            <p class="col-2"><strong>$<%= @total %></strong></p>
 
-<%= link_to 'Checkout', orders_path , method: :post%>
+            <p class="btn-secondary col-4 text-center"><%= link_to 'Go to payment', new_charge_path %></p>
+          </div>
+
+        </tfoot>
+      </table>
+   <% end  %>
+
+  </div>
+</section>
