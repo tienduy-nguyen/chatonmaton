@@ -12070,3 +12070,368 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 157ms (Views: 132.2ms | ActiveRecord: 21.1ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanis95000@yopmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "yanis95000@yopmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanis95000@yopmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "yanis95000@yopmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanis95000@yopmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "yanis95000@yopmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for ::1 at 2020-09-02 15:08:37 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_carousel.html.erb (1.5ms)
+  Rendered static_pages/index.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_navbar.html.erb (7.0ms)
+  Rendered layouts/_alert.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 720ms (Views: 708.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-09-02 15:08:41 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (34.3ms)
+  Rendered layouts/_navbar.html.erb (6.3ms)
+  Rendered layouts/_alert.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 231ms (Views: 184.4ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/users" for ::1 at 2020-09-02 15:08:51 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"if2N3nLaiSyVmu6Gv8Do7mBiccQ6Z5POv96p0JPbx8eCVa/8LduKCAxDYAHJkD/37NR815K6K9dLqNufeQJXvQ==", "user"=>{"email"=>"yanis9522@yopmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanis9522@yopmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "yanis9522@yopmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "yanis9522@yopmail.com"], ["encrypted_password", "$2a$12$3KkNCsAFSdndMEzfW.5eN.K4Vo4jjeu52/7jCV0i381Ng1sMuxN9q"], ["created_at", "2020-09-02 13:08:52.124198"], ["updated_at", "2020-09-02 13:08:52.124198"]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Create (7.7ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["created_at", "2020-09-02 13:08:52.178510"], ["updated_at", "2020-09-02 13:08:52.178510"]]
+  ↳ app/models/user.rb:34
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 511ms (ActiveRecord: 24.7ms)
+
+
+Started GET "/" for ::1 at 2020-09-02 15:08:52 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_carousel.html.erb (3.5ms)
+  Rendered static_pages/index.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:14
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:41
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 11]]
+  ↳ app/helpers/application_helper.rb:41
+  Rendered layouts/_navbar.html.erb (39.1ms)
+  Rendered layouts/_alert.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (1.8ms)
+Completed 200 OK in 155ms (Views: 142.0ms | ActiveRecord: 5.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-09-02 15:15:24 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"K+XfV309XkJIoEv7X7UgXpX0JuS+tQlc9NMZJy3CwhWDjhZstX01IVk6BWQB2P/qPowCkVEzUM7z6JAUCs/IlA=="}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-09-02 15:15:24 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_carousel.html.erb (0.9ms)
+  Rendered static_pages/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_navbar.html.erb (4.3ms)
+  Rendered layouts/_alert.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 144ms (Views: 139.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-02 15:15:26 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (3.6ms)
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (51.7ms)
+  Rendered layouts/_navbar.html.erb (8.7ms)
+  Rendered layouts/_alert.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 192ms (Views: 190.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2020-09-02 15:15:29 +0200
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_navbar.html.erb (2.9ms)
+  Rendered layouts/_alert.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 124ms (Views: 112.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for ::1 at 2020-09-02 15:15:33 +0200
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BG0HmMWrBBSPmN9ijwFAc55tgEi8xTfsIdiQpcQcDE3kFGdNN5nPCJkTxrvAEEuciZ8K7TpcsF2+aLI4khbK9w==", "user"=>{"email"=>"yanis9522@yopmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "yanis9522@yopmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (15.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "2d6ef57fb9ed3bbc6c2dfa54ebd0df7eb353cd65da84f0a2a3d9c1be49b8b2e1"], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "2d6ef57fb9ed3bbc6c2dfa54ebd0df7eb353cd65da84f0a2a3d9c1be49b8b2e1"], ["reset_password_sent_at", "2020-09-02 13:15:33.935728"], ["updated_at", "2020-09-02 13:15:33.937459"], ["id", 2]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (1.7ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 372.7ms
+Sent mail to yanis9522@yopmail.com (558.3ms)
+Date: Wed, 02 Sep 2020 15:15:34 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: yanis9522@yopmail.com
+Message-ID: <5f4f9af653192_3f423ff28365c4ac33662@MacBook-Air.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello yanis9522@yopmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=YD3GMZjbgcEYdQvCcPRp">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1216ms (ActiveRecord: 17.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-02 15:15:34 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.7ms)
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered layouts/_alert.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 92ms (Views: 90.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-09-02 15:19:47 +0200
+  
+SyntaxError (/Users/yanismeziane/Desktop/chatonmaton2/app/models/user.rb:7: syntax error, unexpected '(', expecting keyword_end
+...st_create_cart, :welcome_email(user)
+...                              ^):
+  
+app/models/user.rb:7: syntax error, unexpected '(', expecting keyword_end
+config/routes.rb:5:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/users/sign_up" for ::1 at 2020-09-02 15:20:06 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_navbar.html.erb (11.3ms)
+  Rendered layouts/_alert.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 184ms (Views: 157.1ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/users" for ::1 at 2020-09-02 15:20:15 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mx8b9kmQ3N0kTzCwht3WSKXGMwJP0WVMBN29AbKw5YAr2RMoz/F+TxGC/ZMC9jneOCgWxWZknV4aziuMUnDrGg==", "user"=>{"email"=>"yanis95220@yopmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanis95220@yopmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "yanis95220@yopmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "yanis95220@yopmail.com"], ["encrypted_password", "$2a$12$4F/ACZ1alRkJEYZBIDm7wuH3qeKbBl.8bKpIsy1nUVVSNBELrUJsC"], ["created_at", "2020-09-02 13:20:16.240738"], ["updated_at", "2020-09-02 13:20:16.240738"]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Create (0.6ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["created_at", "2020-09-02 13:20:16.270172"], ["updated_at", "2020-09-02 13:20:16.270172"]]
+  ↳ app/models/user.rb:34
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 436ms (ActiveRecord: 11.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/user.rb:37:in `welcome_email'
+Started GET "/" for ::1 at 2020-09-02 15:42:59 +0200
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_carousel.html.erb (3.8ms)
+  Rendered static_pages/index.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_navbar.html.erb (20.0ms)
+  Rendered layouts/_alert.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (6.1ms)
+Completed 200 OK in 1180ms (Views: 1169.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-09-02 15:43:04 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (46.8ms)
+  Rendered layouts/_navbar.html.erb (5.7ms)
+  Rendered layouts/_alert.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 218ms (Views: 174.3ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-02 15:43:07 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.4ms)
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (47.6ms)
+  Rendered layouts/_navbar.html.erb (5.7ms)
+  Rendered layouts/_alert.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 197ms (Views: 188.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2020-09-02 15:43:10 +0200
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered layouts/_alert.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 136ms (Views: 114.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for ::1 at 2020-09-02 15:43:14 +0200
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VinVA3RGYaWknhef+sQPkYw1oBF3U1+szHsb4+KdCde2ULXWhnSqubIVDka11QR+m8cqtPHK2B1Tyzl+tJfPbQ==", "user"=>{"email"=>"yanis95@yopmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "yanis95@yopmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "c0e7065fe23b0b13e25c8b09c90331b28985669a1dd4a804e2d8dd1a028f9e98"], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "c0e7065fe23b0b13e25c8b09c90331b28985669a1dd4a804e2d8dd1a028f9e98"], ["reset_password_sent_at", "2020-09-02 13:43:14.281038"], ["updated_at", "2020-09-02 13:43:14.283294"], ["id", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (0.9ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 391.1ms
+Sent mail to yanis95@yopmail.com (14.2ms)
+Date: Wed, 02 Sep 2020 15:43:14 +0200
+From: chaton-maton@outlook.fr
+Reply-To: chaton-maton@outlook.fr
+To: yanis95@yopmail.com
+Message-ID: <5f4fa172ade5a_414e3feed3d617249962a@MacBook-Air.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello yanis95@yopmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=6fT5qHhz1W6vBuPGAwFz">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 702ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-02 15:43:14 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (6.7ms)
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.6ms)
+  Rendered layouts/_navbar.html.erb (9.6ms)
+  Rendered layouts/_alert.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 111ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-09-02 15:46:15 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.0ms)
+  Rendered layouts/_navbar.html.erb (6.3ms)
+  Rendered layouts/_alert.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 198ms (Views: 194.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-09-02 15:46:28 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d4IY0VQcIyNCc2vddncNlxJYrNS9qxCkkTmuVKCf3Fk5ST8mX+kO1sQ5o76E1xS3XAWVYiHTAmdYJYBWhoSczg==", "user"=>{"email"=>"yanistest@yopmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanistest@yopmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "yanistest@yopmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "yanistest@yopmail.com"], ["encrypted_password", "$2a$12$vjdaEMWXj55pxzW0onHTyOFV1elkFf1IVyOcaIEuGPMFwMTeVTV/u"], ["created_at", "2020-09-02 13:46:28.981432"], ["updated_at", "2020-09-02 13:46:28.981432"]]
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Create (7.8ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 4], ["created_at", "2020-09-02 13:46:29.060251"], ["updated_at", "2020-09-02 13:46:29.060251"]]
+  ↳ app/models/user.rb:34
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/yanismeziane/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 556ms (ActiveRecord: 21.6ms)
+
+
+Started GET "/" for ::1 at 2020-09-02 15:46:29 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_carousel.html.erb (0.8ms)
+  Rendered static_pages/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:14
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:41
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 13]]
+  ↳ app/helpers/application_helper.rb:41
+  Rendered layouts/_navbar.html.erb (42.9ms)
+  Rendered layouts/_alert.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 207ms (Views: 197.8ms | ActiveRecord: 4.3ms)
+
+
