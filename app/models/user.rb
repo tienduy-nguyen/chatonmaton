@@ -33,5 +33,6 @@ class User < ApplicationRecord
     cart = Cart.new(user: self)
     cart.save ? true : cart.errors
   end
+  
 
 end
