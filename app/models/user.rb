@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  after_create :must_create_cart
+  after_create :must_create_cart, :welcome_send
   
 
   has_one :cart
@@ -32,6 +32,10 @@ class User < ApplicationRecord
   def must_create_cart
     cart = Cart.new(user: self)
     cart.save ? true : cart.errors
+  end
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
   end
 
 end
