@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :carts
   resources :orders
-  resources :items
+  resources :items do
+    resources :images, only: [:create]
+  end
 
   # Account settings
   get 'account/profile', to: "users#profile"
@@ -17,5 +19,6 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about', as: 'about'
   get '/contact', to: 'static_pages#contact', as: 'contact'
 
+  
   
 end
