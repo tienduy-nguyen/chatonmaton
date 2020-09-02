@@ -22,10 +22,10 @@
         <td><%= link_to 'Destroy', cart_path(id: current_user.cart.id, item_cart_id: item_cart.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
         <% end %>
-       
+
       </tr>
     <% end %>
-  
+
     <tr>
             <td><strong>Total</strong></td>
             <td><strong><%= @total %></strong></td>
@@ -36,6 +36,6 @@
 <br>
 
 
-<%= link_to 'Checkout', orders_path , method: :post%>
+<%= link_to 'Checkout', new_cart_path , method: :post%>
 
 </div>

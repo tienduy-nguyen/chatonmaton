@@ -1,0 +1,32 @@
+<section>
+   <div class="container">
+      <table class="table-primary">
+          <% @item_carts.each do |item_cart| %>
+            <div class="row m-3">
+                <p class="col-3"><%= item_cart.item.title %></p>
+                <p class="col-3"><%= item_cart.item.price %></p>
+                <img src="<%= item_cart.item.image_url %>" alt="alternatetext" class="col-3">
+            </div>
+          <% end %>
+      </table>
+    </div>
+
+    <%= form_tag charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <label class="amount">
+          <span>Amount: <%= @amount %></span>
+        </label>
+      </article>
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="A month's subscription"
+              data-amount="500"
+              data-locale="auto"></script>
+    <% end %>
+</section>
