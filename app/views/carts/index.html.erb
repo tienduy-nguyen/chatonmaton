@@ -27,10 +27,14 @@
                 <p class="col-4"><%= truncate(item_cart.item.description, length: 50) %></p>
                 <p class="col-2">$<%= item_cart.item.price %></p>
                 <%= link_to item_path(item_cart.item), class:"col-2" do %>
-                    <img src="<%= item_cart.item.image_url %>" 
-                     alt="alternatetext"
-                     style="max-height: 120px;max-width: 120px;"
-                      >
+
+                 <% if item_cart.item.image_url.attached? %>
+                      <%= image_tag item_cart.item.image_url, alt: 'image cat', class: "img-thumbnail"%>
+
+                  <% else %>
+                    <img src="<%= asset_path('cat-default')%>" alt="tets" class="img-thumbnail">
+                  <% end %>
+                   
                 <% end %>
                      
                
