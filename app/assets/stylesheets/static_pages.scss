@@ -49,7 +49,7 @@
 }
 
 .about-section {
-  margin-top: 40px;
+  padding-top: 40px;
   margin-bottom: 200px;
 }
 
@@ -109,4 +109,29 @@
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.contact-title {
+  padding-top: 40px;
+  background: {
+    image: asset_url('bg-01');
+  }
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 200px;
+  h2 {
+    font-size: 2.4rem;
+  }
+}
+.contact-section {
+  margin-top: 100px;
+}
+
+.contact-info-title {
+  font-size: 1.2rem;
+}
+
+.contact-map {
+  margin-bottom: 200px;
 }
