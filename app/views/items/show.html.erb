@@ -18,9 +18,9 @@
 
       <div class="col-6">
         <div class="btn-group float-right d-flex align-items-center" role="group" aria-label="Basic example">
-          <%= link_to carts_path(id: current_user.cart.id, item_id: @item.id) , method: :post  do %>
-          <i class="fas fa-cart-plus fa-2x mr-3"></i>
-          <% end %>
+            <%= link_to carts_path( item_id: @item.id) , method: :post  do %>
+            <i class="fas fa-cart-plus fa-2x mr-3"></i>
+            <% end %>
           <button type="button" class="btn btn-secondary"><%= link_to 'Back to shop', items_path %></button>
         </div>
       </div>

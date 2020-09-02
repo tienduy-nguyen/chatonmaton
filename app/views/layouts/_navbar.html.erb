@@ -81,16 +81,18 @@
             </li>
           </ul>
 
-          <div class="navbar-cart ml-auto text-dark d-none d-md-block">
-            <%= link_to carts_path do %>
-            <div class="cart-icon">
-              <i class="fas fa-shopping-cart fa-2x"></i>
+          <%if current_user != nil %>
+            <div class="navbar-cart ml-auto text-dark d-none d-md-block">
+              <%= link_to carts_path do %>
+              <div class="cart-icon">
+                <i class="fas fa-shopping-cart fa-2x"></i>
+              </div>
+              <div class="cart-quantity">
+                <span class="px-1 py-0"><%= amount_item_cart %></span>
+              </div>
+              <% end %>
             </div>
-            <div class="cart-quantity">
-              <span class="px-1 py-0"><%= amount_item_cart %></span>
-            </div>
-            <% end %>
-          </div>
+          <%end%>
 
         </div>
       </nav>

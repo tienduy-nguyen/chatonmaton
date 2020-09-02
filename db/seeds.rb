@@ -8,6 +8,8 @@
 Item.destroy_all
 User.destroy_all
 Cart.destroy_all
+ItemCart.destroy_all
+Order.destroy_all
 
 
 item_1 = Item.create(title: "Steve", description:"cat looking at the window standing up", price: 1.99, image_url: "https://cloudfront-eu-central-1.images.arcpublishing.com/prisa/IPZM424KYBEH7IVUKNQZETWHVU.jpg")
