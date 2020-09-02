@@ -6,4 +6,7 @@ class Cart < ApplicationRecord
   def get_item_carts
     return ItemCart.where(cart: self)
   end
+  def is_empty?
+    return self.get_item_carts.count <1
+  end
 end

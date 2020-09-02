@@ -36,10 +36,8 @@ module ApplicationHelper
     return time.strftime("%d")
   end
 
-  def check_cart
-
+  def amount_item_cart
+    return ItemCart.where(cart: current_user.cart).count
   end
-
-  
 
 end

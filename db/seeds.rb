@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Item.destroy_all
+User.destroy_all
+Cart.destroy_all
+
 
 item_1 = Item.create(title: "Steve", description:"cat looking at the window standing up", price: 1.99, image_url: "https://cloudfront-eu-central-1.images.arcpublishing.com/prisa/IPZM424KYBEH7IVUKNQZETWHVU.jpg")
 item_2 = Item.create(title: "Bob", description:"cat getting pet", price: 0.99, image_url: "https://cdnuploads.aa.com.tr/uploads/Contents/2020/05/14/thumbs_b_c_88bedbc66bb57f0e884555e8250ae5f9.jpg?v=140708")
