@@ -1,0 +1,52 @@
+<section class="cart-section">
+   <div class="container mt-5">
+     <table class="table-primary">
+       <thead>
+         <div class="row" style="border: 0.05em solid">
+           <p class="col-3">Article</p>
+           <p class="col-3 ">Price</p>
+           <p class="col-3 ">Quick overview</p>
+         </div>
+       </thead>
+
+       <tbody>
+         <% @item_carts.each do |item_cart| %>
+           <div class="row mt-2 border-bottom">
+               <p class="col-3"><%= item_cart.item.title %></p>
+               <p class="col-3">$<%= item_cart.item.price %></p>
+               <%= link_to item_path(item_cart.item), class:"col-3" do %>
+                   <img src="<%= item_cart.item.image_url %>"
+                    alt="alternatetext"
+                    style="max-height: 120px;max-width: 120px;"
+                     >
+               <% end %>
+             </div>
+           <% end %>
+       </tbody>
+    </table>
+
+    <%= form_tag charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+
+        <div class="row mt-3">
+          <div class="col-6 mb-3" style="border: 0.15em solid">
+            <label class="amount">
+              <span>Amount: $ <%= @amount %></span>
+            </label>
+          </div>
+        </div>
+      </article>
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="Validate your cart"
+              data-amount="<%= @amount *100 %>"
+              data-locale="auto"></script>
+    <% end %>
+  </div>
+</section>
