@@ -2,12 +2,12 @@ class OrderMailer < ApplicationMailer
   default from: 'chaton-maton@outlook.fr'
   layout 'mailer'
 
-  def send_new_order_message(user)
-    @user = user
+  def send_admin_order(order)
+    @order = order
     mail(:to => 'yanis95@yopmail.com', :subject => "New Order created please review and enable.")
   end
 
-  def send_new_user_message(user)
+  def send_order_confirmation(user)
     @user = user
     mail(:to => @user.email, :subject => "Your order is confirmed !")
   end
