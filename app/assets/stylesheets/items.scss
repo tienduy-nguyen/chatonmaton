@@ -7,13 +7,15 @@
     text-decoration: none;
   }
 }
-.card-body {
-  i {
-    color: #444;
-    transition: all 0.5s ease;
-    &:hover {
-      transform: scale(1.2);
-      color: #717fe0;
-    }
+.fa-cart-plus {
+  color: #444;
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.2);
+    color: #717fe0;
   }
+}
+
+.item-show-section {
+  margin-bottom: 200px;
 }
