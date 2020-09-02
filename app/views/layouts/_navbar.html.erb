@@ -67,17 +67,17 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="main-nav-item active">
+            <li class="main-nav-item  <%= active_class(root_path) %>">
               <a class="main-nav-link mr-4" href="<%= root_path %>">Home</a>
             </li>
-            <li class="main-nav-item">
+            <li class="main-nav-item  <%= active_class(items_path) %>">
               <a class="main-nav-link mr-4" href="<%= items_path %>">Shop</a>
             </li>
-            <li class="main-nav-item">
-              <a class="main-nav-link mr-4" href="#">About</a>
+            <li class="main-nav-item  <%= active_class(about_path) %>">
+              <a class="main-nav-link mr-4" href="<%= about_path %>">About</a>
             </li>
-            <li class="main-nav-item">
-              <a class="main-nav-link" href="#">Contact</a>
+            <li class="main-nav-item  <%= active_class(contact_path) %>">
+              <a class="main-nav-link" href="<%= contact_path %>">Contact</a>
             </li>
           </ul>
 
