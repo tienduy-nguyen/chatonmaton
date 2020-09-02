@@ -1,5 +1,13 @@
-<p>Thanks you <% @user.email%>!</p>
+<p>Thanks you <%= @user.email%>!</p>
 
 <p>Your order is confirmed !</p>
 
 <p>Here you can find your items :</p>
+<% @item_cart.each do |product| %>
+  <p>Title : <%= product.item.title%></p>
+  <p>Price : <%= product.item.price%> $</p>
+  <img src="<%= product.item.image_url%>">
+<%end%>
+
+<p> Thanks you for your purchase </p>
+<p> See you soon ! </p>

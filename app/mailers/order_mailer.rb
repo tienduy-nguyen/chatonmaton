@@ -9,6 +9,7 @@ class OrderMailer < ApplicationMailer
 
   def send_order_confirmation(user)
     @user = user
+    @item_cart = ItemCart.where(cart_id: @user.cart.id)
     mail(:to => @user.email, :subject => "Your order is confirmed !")
   end
 end
