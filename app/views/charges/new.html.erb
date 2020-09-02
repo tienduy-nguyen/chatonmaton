@@ -15,10 +15,16 @@
                <p class="col-3"><%= item_cart.item.title %></p>
                <p class="col-3">$<%= item_cart.item.price %></p>
                <%= link_to item_path(item_cart.item), class:"col-3" do %>
-                   <img src="<%= item_cart.item.image_url %>"
-                    alt="alternatetext"
-                    style="max-height: 120px;max-width: 120px;"
-                     >
+
+                  <% if item_cart.item.image_url.attached? %>
+                      <%= image_tag item_cart.item.image_url, 
+                      alt: 'image cat', class: "img-thumbnail",
+                      style: "max-height: 120px;max-width: 120px;"
+                      %>
+
+                  <% else %>
+                    <img src="<%= asset_path('cat-default')%>" alt="tets" class="img-thumbnail" style="max-height: 120px;max-width: 120px;">
+                  <% end %>
                <% end %>
              </div>
            <% end %>

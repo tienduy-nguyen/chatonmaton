@@ -34,3 +34,230 @@ Processing by StaticPagesController#index as HTML
 Completed 200 OK in 78ms (Views: 74.8ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/" for ::1 at 2020-09-02 20:37:03 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_carousel.html.erb (0.5ms)
+  Rendered static_pages/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:14
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:46
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/helpers/application_helper.rb:46
+  Rendered layouts/_navbar.html.erb (45.6ms)
+  Rendered layouts/_alert.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 1468ms (Views: 1454.1ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/carts" for ::1 at 2020-09-02 20:37:10 +0200
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:4
+  [1m[36mItemCart Load (0.3ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/controllers/carts_controller.rb:6
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:6
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:6
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:6
+  Rendering carts/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/models/cart.rb:10
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Item"], ["name", "image_url"], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:31
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Item"], ["name", "image_url"], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:31
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Item"], ["name", "image_url"], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:31
+  Rendered carts/index.html.erb within layouts/application (56.5ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/helpers/application_helper.rb:46
+  Rendered layouts/_navbar.html.erb (3.3ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 152ms (Views: 105.7ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4faf2abc5b400c4507a22ef588d11913496ad552/cat1.jpeg" for ::1 at 2020-09-02 20:37:10 +0200
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9da0925c68f3493d52eafd3e177fb2007cf1a7f3/cat1.jpeg" for ::1 at 2020-09-02 20:37:10 +0200
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4faf2abc5b400c4507a22ef588d11913496ad552", "filename"=>"cat1"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (3.8ms) [0m[34mGenerated URL for file at key: rBHggzjNcVUC8LUNGtWkAqAk (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRja0pJWjJkNmFrNWpWbFZET0V4VlRrZDBWMnRCY1VGckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--dfd503138e9063060e19709ef2ffdd238d1f34b4/cat1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cat1.jpeg%22%3B+filename%2A%3DUTF-8%27%27cat1.jpeg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRja0pJWjJkNmFrNWpWbFZET0V4VlRrZDBWMnRCY1VGckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--dfd503138e9063060e19709ef2ffdd238d1f34b4/cat1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cat1.jpeg%22%3B+filename%2A%3DUTF-8%27%27cat1.jpeg
+Completed 302 Found in 10ms (ActiveRecord: 0.3ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9da0925c68f3493d52eafd3e177fb2007cf1a7f3", "filename"=>"cat1"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/tienduy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: fdg5mCxyfGCPNQC4FVH3FXT9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRabVJuTlcxRGVIbG1SME5RVGxGRE5FWldTRE5HV0ZRNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--399aefe14a4df9adfb9a9284ee2aeb5fd3d644e2/cat1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cat1.jpeg%22%3B+filename%2A%3DUTF-8%27%27cat1.jpeg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRabVJuTlcxRGVIbG1SME5RVGxGRE5FWldTRE5HV0ZRNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--399aefe14a4df9adfb9a9284ee2aeb5fd3d644e2/cat1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cat1.jpeg%22%3B+filename%2A%3DUTF-8%27%27cat1.jpeg
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRja0pJWjJkNmFrNWpWbFZET0V4VlRrZDBWMnRCY1VGckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--dfd503138e9063060e19709ef2ffdd238d1f34b4/cat1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cat1.jpeg%22%3B+filename%2A%3DUTF-8%27%27cat1.jpeg" for ::1 at 2020-09-02 20:37:10 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRabVJuTlcxRGVIbG1SME5RVGxGRE5FWldTRE5HV0ZRNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--399aefe14a4df9adfb9a9284ee2aeb5fd3d644e2/cat1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cat1.jpeg%22%3B+filename%2A%3DUTF-8%27%27cat1.jpeg" for ::1 at 2020-09-02 20:37:10 +0200
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"cat1.jpeg\"; filename*=UTF-8''cat1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRja0pJWjJkNmFrNWpWbFZET0V4VlRrZDBWMnRCY1VGckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--dfd503138e9063060e19709ef2ffdd238d1f34b4", "filename"=>"cat1"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 200 OK in 7ms (ActiveRecord: 0.0ms)
+
+
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"cat1.jpeg\"; filename*=UTF-8''cat1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRabVJuTlcxRGVIbG1SME5RVGxGRE5FWldTRE5HV0ZRNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--399aefe14a4df9adfb9a9284ee2aeb5fd3d644e2", "filename"=>"cat1"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/charges/new" for ::1 at 2020-09-02 20:37:12 +0200
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:3
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:3
+  [1m[36mItemCart Load (0.3ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (2.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/helpers/application_helper.rb:46
+  Rendered layouts/_navbar.html.erb (3.7ms)
+  Rendered layouts/_alert.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 79ms (Views: 66.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/charges/new" for ::1 at 2020-09-02 20:37:12 +0200
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:3
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:3
+  [1m[36mItemCart Load (0.3ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (2.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/helpers/application_helper.rb:46
+  Rendered layouts/_navbar.html.erb (3.8ms)
+  Rendered layouts/_alert.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 69ms (Views: 56.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/charges/new" for ::1 at 2020-09-02 20:39:01 +0200
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:3
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:3
+  [1m[36mItemCart Load (0.2ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  Rendering charges/new.html.erb within layouts/charges
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Item"], ["name", "image_url"], ["LIMIT", 1]]
+  ↳ app/views/charges/new.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/charges/new.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Item"], ["name", "image_url"], ["LIMIT", 1]]
+  ↳ app/views/charges/new.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/charges/new.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Item"], ["name", "image_url"], ["LIMIT", 1]]
+  ↳ app/views/charges/new.html.erb:19
+  Rendered charges/new.html.erb within layouts/charges (14.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/helpers/application_helper.rb:46
+  Rendered layouts/_navbar.html.erb (3.0ms)
+  Rendered layouts/_alert.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 77ms (Views: 67.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRja0pJWjJkNmFrNWpWbFZET0V4VlRrZDBWMnRCY1VGckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--dfd503138e9063060e19709ef2ffdd238d1f34b4/cat1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cat1.jpeg%22%3B+filename%2A%3DUTF-8%27%27cat1.jpeg" for ::1 at 2020-09-02 20:39:02 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRabVJuTlcxRGVIbG1SME5RVGxGRE5FWldTRE5HV0ZRNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--399aefe14a4df9adfb9a9284ee2aeb5fd3d644e2/cat1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cat1.jpeg%22%3B+filename%2A%3DUTF-8%27%27cat1.jpeg" for ::1 at 2020-09-02 20:39:02 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"cat1.jpeg\"; filename*=UTF-8''cat1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRja0pJWjJkNmFrNWpWbFZET0V4VlRrZDBWMnRCY1VGckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--dfd503138e9063060e19709ef2ffdd238d1f34b4", "filename"=>"cat1"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"cat1.jpeg\"; filename*=UTF-8''cat1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRabVJuTlcxRGVIbG1SME5RVGxGRE5FWldTRE5HV0ZRNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--399aefe14a4df9adfb9a9284ee2aeb5fd3d644e2", "filename"=>"cat1"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/charges/new" for ::1 at 2020-09-02 20:39:17 +0200
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:3
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:3
+  [1m[36mItemCart Load (0.4ms)[0m  [1m[34mSELECT "item_carts".* FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:5
+  Rendering charges/new.html.erb within layouts/charges
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Item"], ["name", "image_url"], ["LIMIT", 1]]
+  ↳ app/views/charges/new.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/charges/new.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Item"], ["name", "image_url"], ["LIMIT", 1]]
+  ↳ app/views/charges/new.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/charges/new.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Item"], ["name", "image_url"], ["LIMIT", 1]]
+  ↳ app/views/charges/new.html.erb:19
+  Rendered charges/new.html.erb within layouts/charges (14.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "item_carts" WHERE "item_carts"."cart_id" = $1[0m  [["cart_id", 72]]
+  ↳ app/helpers/application_helper.rb:46
+  Rendered layouts/_navbar.html.erb (4.7ms)
+  Rendered layouts/_alert.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 89ms (Views: 74.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRja0pJWjJkNmFrNWpWbFZET0V4VlRrZDBWMnRCY1VGckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--dfd503138e9063060e19709ef2ffdd238d1f34b4/cat1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cat1.jpeg%22%3B+filename%2A%3DUTF-8%27%27cat1.jpeg" for ::1 at 2020-09-02 20:39:17 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"cat1.jpeg\"; filename*=UTF-8''cat1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRja0pJWjJkNmFrNWpWbFZET0V4VlRrZDBWMnRCY1VGckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--dfd503138e9063060e19709ef2ffdd238d1f34b4", "filename"=>"cat1"}
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRabVJuTlcxRGVIbG1SME5RVGxGRE5FWldTRE5HV0ZRNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--399aefe14a4df9adfb9a9284ee2aeb5fd3d644e2/cat1.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22cat1.jpeg%22%3B+filename%2A%3DUTF-8%27%27cat1.jpeg" for ::1 at 2020-09-02 20:39:18 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"cat1.jpeg\"; filename*=UTF-8''cat1.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRabVJuTlcxRGVIbG1SME5RVGxGRE5FWldTRE5HV0ZRNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMkYwTVM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhReExtcHdaV2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wOS0wMlQxODo0MjoxMC43NTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--399aefe14a4df9adfb9a9284ee2aeb5fd3d644e2", "filename"=>"cat1"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
