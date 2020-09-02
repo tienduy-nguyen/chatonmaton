@@ -3,6 +3,11 @@ module ApplicationHelper
   def active_class(link_path)
     current_page?(link_path) ? "active" : ""
   end
+
+  def hide_footer
+    current_page?(root_path) ? "" : "footer-fixed"
+  end
+
   def flash_class(level)
     case level
         when "notice"

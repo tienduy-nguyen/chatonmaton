@@ -5,7 +5,7 @@
 .carousel-item {
   background-size: cover;
   background-repeat: no-repeat;
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   position: relative;
   .content {
@@ -18,18 +18,18 @@
 
 .carousel-item-first {
   background: {
-    image: asset_url("cat1");
+    image: asset_url('cat1');
   }
 }
 .carousel-item-second {
   background: {
-    image: asset_url("cat2");
+    image: asset_url('cat2');
   }
 }
 
 .carousel-item-third {
   background: {
-    image: asset_url("cat3");
+    image: asset_url('cat3');
   }
 }
 
@@ -52,6 +52,8 @@
   padding-top: 40px;
   margin-bottom: 200px;
 }
+.content.text-center {
+}
 
 /*---------------------------------------------*/
 .how-bor2,
@@ -62,7 +64,7 @@
 
 .how-bor2::before,
 .how-bor1::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   z-index: -1;
@@ -114,7 +116,7 @@
 .contact-title {
   padding-top: 40px;
   background: {
-    image: asset_url("bg-01");
+    image: asset_url('bg-01');
   }
   background-size: cover;
   background-position: center center;
