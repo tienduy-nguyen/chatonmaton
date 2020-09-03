@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user
-  
+
   # GET account/settings
   def settings
 
@@ -9,6 +9,10 @@ class UsersController < ApplicationController
   # GET account/profile --> new
   def profile
     @user = current_user
+  end
+
+  def secret 
+    
   end
 
 
@@ -23,18 +27,12 @@ class UsersController < ApplicationController
       end
       render :profile
     end
-
   end
 
-  def secret 
-    
-  end
-
-  
+ 
 
 
   private
-
   def set_user
     @user = current_user
   end

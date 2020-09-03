@@ -18,12 +18,10 @@
 
                   <% if item_cart.item.image_url.attached? %>
                       <%= image_tag item_cart.item.image_url, 
-                      alt: 'image cat', class: "img-thumbnail",
-                      style: "max-height: 120px;max-width: 120px;"
+                      alt: 'image cat', class: "card-img"
                       %>
-
                   <% else %>
-                    <img src="<%= asset_path('cat-default')%>" alt="tets" class="img-thumbnail" style="max-height: 120px;max-width: 120px;">
+                    <img src="<%= asset_path('cat-default')%>" alt="tets" class="card-img">
                   <% end %>
                <% end %>
              </div>

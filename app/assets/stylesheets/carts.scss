@@ -31,3 +31,20 @@
     left: 40%;
   }
 }
+.view-order {
+  background: lightness($color: #717fe0);
+  display: block;
+  align-items: center;
+  position: relative;
+  margin-right: 0px;
+  &:hover {
+    text-decoration: none;
+    background: #717fe0;
+    color: #fff;
+  }
+  span {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+  }
+}
