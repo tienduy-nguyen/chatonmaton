@@ -10,7 +10,7 @@ class Order < ApplicationRecord
   end
 
   def send_admin_mail
-    OrderMailer.send_admin_order(self).deliver
+    OrderMailer.send_admin_order(self.user).deliver
   end
 
   def send_user_mail
