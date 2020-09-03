@@ -7,5 +7,5 @@ Nous te souhaitons une bonne visite !
 Des bisous de Afsaneh, Donatella, Tien Duy, Yanis et Maxime. <3  
 Mmm..babye !
 <p align="center">
-  <img src="https://media.giphy.com/media/xT9KVg3JVNumj5ZrW0/source.mp4">
+  <img src="https://media.giphy.com/media/VF65SrQlmClUc/giphy.gif">
 </p>
