@@ -10,7 +10,7 @@
     <p class="lead">
       <a class="btn btn-primary btn-md" href="#" role="button">Learn more</a>
     </p>
-    <% if current_user.is_admin %>
+    <% if user_signed_in? && current_user.is_admin %>
       <p class="lead">
       <a class="btn btn-custom-no-radius btn-md" href="<%= new_item_path %>" role="button">
       <i class="fas fa-plus"></i> New Item</a>
