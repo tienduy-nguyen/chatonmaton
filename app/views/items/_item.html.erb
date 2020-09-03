@@ -6,10 +6,9 @@
       <h6 class="card-subtitle text-muted"><%= truncate(item.description, length: 60) %></h6>
     </div>
     <% if item.image_url.attached? %>
-    <%= image_tag item.image_url, alt: 'image cat', class: "img-thumbnail", 
-    style: "height: 200px; width: 100%; display: block;" %>
+    <%= image_tag item.image_url, alt: 'image cat', class: "card-img" %>
     <% else %>
-     <img style="height: 200px; width: 100%; display: block;" src="<%= asset_path('cat-default')%>" alt="<%=item.description%>">
+     <img src="<%= asset_path('cat-default')%>" alt="<%=item.description%>" class="card-img">
 
     <% end %>
     <div class="card-body">
