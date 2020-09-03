@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+
   get 'static_pages/about'
   get 'static_pages/contact'
   root to: 'static_pages#index'
+
+   # Devise for user
+   devise_for :admin_users, {class_name: 'User'}.merge(ActiveAdmin::Devise.config)
+   ActiveAdmin.routes(self)
+
   devise_for :users
 
   resources :carts
