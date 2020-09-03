@@ -7,7 +7,9 @@ class ChargesController < ApplicationController
 
   def create
     @cart = current_user.cart
-    @item_carts = ItemCart.where(cart: @cart)
+    # @item_carts = ItemCart.where(cart: @cart)
+    @item_carts = ItemCart.where(cart_id: @cart.id)
+  
     @amount = @item_carts.reduce(0){|sum, ic| sum + ic.item.price}.round(2)*100
 
     customer = Stripe::Customer.create({
@@ -21,7 +23,8 @@ class ChargesController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'usd',
     })
-    cart_empty
+
+    # cart_empty(@item_carts)
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -29,14 +32,15 @@ class ChargesController < ApplicationController
   end
 
   private
-  def cart_empty
+  def cart_empty(item_carts)
     @order = Order.create(user: current_user)
     @cart = current_user.cart
-    item_carts = ItemCart.where(cart: @cart)
+    item_carts = ItemCart.where(cart_id: @cart.id)
     item_carts.each do |item_cart|
       ItemOrder.create(item: item_cart.item, order: @order)
       item_cart.destroy
     end
+    return item_carts
   end
 
 

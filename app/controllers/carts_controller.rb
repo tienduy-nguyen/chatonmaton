@@ -20,6 +20,13 @@ class CartsController < ApplicationController
   def create
     @cart = Cart.find(current_user.cart.id)
     @item = Item.find(params[:item_id])
+
+    # Check item is already in card
+    check_item = ItemCart.find_by(item: @item);
+    if !check_item.nil?
+      flash[:error] = "This item is already added in cart."
+      return redirect_to items_path
+    end
     item_cart = ItemCart.new(cart: @cart, item: @item)
     if item_cart.save
       redirect_to items_path
