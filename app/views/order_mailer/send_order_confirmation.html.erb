@@ -7,9 +7,9 @@
   <p>Title : <%= item_cart.item.title%></p>
   <p>Price : <%= item_cart.item.price%> $</p>
   <% if item_cart.item.image_url.attached? %>
-        <%= image_tag item_cart.item.image_url, alt: 'Image' %>
+        <p><%= url_for(item_cart.item.image_url)%></p>
     <% else %>
-      <img src="<%= asset_path('cat-default')%>" alt="Image">
+       <p><%= url_for(image_url('cat-default'))%></p>
     <% end %>
 <%end%>
 

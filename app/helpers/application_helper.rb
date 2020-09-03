@@ -61,4 +61,11 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
+
+  #---------------------------------------#
+  # Image for action mailer
+  def image_url(source)
+    URI.join(root_url, image_path(source))
+  end
+
 end
