@@ -7,9 +7,13 @@
   <p>Title : <%= item_cart.item.title%></p>
   <p>Price : <%= item_cart.item.price%> $</p>
   <% if item_cart.item.image_url.attached? %>
-        <p><%= url_for(item_cart.item.image_url)%></p>
+        <p>
+          <%= image_tag item_cart.item.image_url, alt: 'image cat' %>
+        </p>
     <% else %>
-       <p><%= url_for(image_url('cat-default'))%></p>
+       <p>
+          <%= image_tag image_url('cat-default'), alt: 'image cat' %>
+       </p>
     <% end %>
 <%end%>
 
