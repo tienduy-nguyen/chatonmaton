@@ -1,0 +1,70 @@
+<section class="cart-section">
+   <div class="container mt-5 px-0">
+
+   <% if  @cart.is_empty? %>
+    <div class="text-center">
+      <span>Your cart is empty...</span> <br>
+      <a class="btn btn-outline-primary mt-3" href="<%= items_path %>">Back to shopping</a>
+
+    </div>
+    <% else %>
+      <!-- Table of cart -->
+       <table class="table-primary">
+
+          <thead>
+            <div class="row" style="border: 0.15em solid">
+              <p class="col-2">Article</p>
+              <p class="col-4 ">Description</p>
+              <p class="col-2 ">Price</p>
+              <p class="col-2 ">Quick overview</p>
+            </div>
+          </thead>
+
+        <tbody>
+          <% @item_carts.each do |item_cart| %>
+            <div class="row mt-2 border-bottom px-0">
+                <p class="col-2"><%= item_cart.item.title %></p>
+                <p class="col-4"><%= truncate(item_cart.item.description, length: 50) %></p>
+                <p class="col-2">$<%= item_cart.item.price %></p>
+                <%= link_to item_path(item_cart.item), class:"col-2" do %>
+
+                  <% if item_cart.item.image_url.attached? %>
+                      <%= image_tag item_cart.item.image_url, alt: 'image cat', class: "img-thumbnail"%>
+
+                  <% else %>
+                    <img src="<%= asset_path('cat-default')%>" alt="tets" class="img-thumbnail">
+                  <% end %>
+                   
+                <% end %>
+
+
+                <% if user_signed_in? %>
+                  <p class="col-2 ml-auto">
+                  <%= link_to cart_path(id: current_user.cart.id, item_cart_id: item_cart.id),
+                   method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="far fa-trash-alt text-danger"></i> Remove item
+                  <% end %>
+                   </p>
+                <% end %>
+              </div>
+            <% end %>
+
+        </tbody>
+        <div>
+          <div class="row mt-5 mx-0 px-0" style="border: 0.05em solid; position: relative;">
+            <p class="col-2"></p>
+            <p class="col-2"></p>
+            <p class="col-2"><strong>Total</strong></p>
+            <p class="col-2"><strong>$<%= @total %></strong></p>
+
+            <%= link_to new_charge_path , class:'link-checkout text-center mx-auto col-4' do %>
+                <span>Go to payment</span>
+            <% end %>
+          </div>
+
+        </div>
+      </table>
+   <% end  %>
+
+  </div>
+</section>

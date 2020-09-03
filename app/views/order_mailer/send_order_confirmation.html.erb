@@ -1,0 +1,21 @@
+<p>Thanks you <%= @user.email%>!</p>
+
+<p>Your order is confirmed !</p>
+
+<p>Here you can find your items :</p>
+<% @item_carts.each do |item_cart| %>
+  <p>Title : <%= item_cart.item.title%></p>
+  <p>Price : <%= item_cart.item.price%> $</p>
+  <% if item_cart.item.image_url.attached? %> 
+    <p>
+      <%= image_tag item_cart.item.image_url, alt: 'image cat' %>
+    </p>
+  <% else %>
+    <p>
+      <%= image_tag image_url('cat-default'), alt: 'image cat' %>
+    </p>
+  <% end %>
+<%end%>
+
+<p> Thanks you for your purchase </p>
+<p> See you soon ! </p>

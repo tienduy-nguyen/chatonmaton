@@ -1,0 +1,31 @@
+<div class="container">
+
+<div class="jumbotron">
+  <h1 class="display-3 d-none d-md-block">Here are our lovely pictures !</h1>
+  <h1 class="display-4 d-md-none d-sm-block">Here are our lovely pictures !</h1>
+  <p class="lead">If you are here, it is because you love those furry cute animals.</p>
+  <hr class="my-4">
+  <p>We love them too and we have tons of quality pictures juste for you.</p>
+  <div class="d-flex justify-content-between">
+    <p class="lead">
+      <a class="btn btn-primary btn-md" href="#" role="button">Learn more</a>
+    </p>
+    <% if user_signed_in? && current_user.is_admin %>
+      <p class="lead">
+      <a class="btn btn-custom-no-radius btn-md" href="<%= new_item_path %>" role="button">
+      <i class="fas fa-plus"></i> New Item</a>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+    <div class="items">
+        <% @items.each do |item| %>
+        <%= render "item", item: item%>
+        <% end %>
+    </div>
+
+
+</div>
+
+

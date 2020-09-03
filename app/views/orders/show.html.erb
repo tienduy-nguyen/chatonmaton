@@ -1,0 +1,43 @@
+<section class="orders-section">
+   <div class="container mt-5 px-0">
+      <!-- Table of cart -->
+
+      <div class="d-flex justify-content-between">
+          <h4 class="mb-4">Order_id: <%= @order.id %></h4>
+          <span>Created at: <%= get_time(@order.created_at)%></span>
+      </div>
+       <table class="table-primary">
+
+          <thead>
+            <div class="row" style="border: 0.15em solid">
+              <p class="col-2">Article</p>
+              <p class="col-4 ">Description</p>
+              <p class="col-2 ">Price</p>
+              <p class="col-2 ">Quick overview</p>
+            </div>
+          </thead>
+
+        <tbody>
+          <% @item_orders.each do |item_order| %>
+            <div class="row mt-2 border-bottom px-0">
+                <p class="col-2"><%= item_order.item.title %></p>
+                <p class="col-4"><%= truncate(item_order.item.description, length: 50) %></p>
+                <p class="col-2">$<%= item_order.item.price %></p>
+                <%= link_to item_path(item_order.item), class:"col-2" do %>
+
+                  <% if item_order.item.image_url.attached? %>
+                      <%= image_tag item_order.item.image_url, alt: 'image cat', class: "img-thumbnail"%>
+
+                  <% else %>
+                    <img src="<%= asset_path('cat-default')%>" alt="tets" class="img-thumbnail">
+                  <% end %>
+                   
+                <% end %>
+              </div>
+          <% end %>
+
+        </tbody>
+      </table>
+
+  </div>
+</section>

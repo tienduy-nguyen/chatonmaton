@@ -1,0 +1,50 @@
+// Place all the styles related to the Carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart-section {
+  .row {
+    p {
+      margin-top: unset;
+      margin-bottom: unset;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+  margin-bottom: 200px;
+}
+
+.link-checkout {
+  background: lightness($color: #717fe0);
+  display: block;
+  align-items: center;
+  position: relative;
+  margin-right: 0px;
+  &:hover {
+    text-decoration: none;
+    background: #717fe0;
+    color: #fff;
+  }
+  span {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+  }
+}
+.view-order {
+  background: lightness($color: #717fe0);
+  display: block;
+  align-items: center;
+  position: relative;
+  margin-right: 0px;
+  &:hover {
+    text-decoration: none;
+    background: #717fe0;
+    color: #fff;
+  }
+  span {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+  }
+}

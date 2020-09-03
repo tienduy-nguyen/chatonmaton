@@ -1,0 +1,150 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.carousel-item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.carousel-item-first {
+  background: {
+    image: asset_url('cat1');
+  }
+}
+.carousel-item-second {
+  background: {
+    image: asset_url('cat2');
+  }
+}
+
+.carousel-item-third {
+  background: {
+    image: asset_url('cat3');
+  }
+}
+
+.btn.btn-custom {
+  background: #717fe0;
+  border-radius: 999px;
+  color: #fff;
+  display: block;
+  &:hover {
+    background: #333;
+    color: #fff;
+  }
+}
+
+.btn.btn-custom-no-radius {
+  background: #717fe0;
+  color: #fff;
+  display: block;
+  &:hover {
+    background: #333;
+    color: #fff;
+  }
+}
+
+/* This only changes this particular animation duration */
+.animate__animated {
+  --animate-duration: 3s;
+}
+
+.about-section {
+  padding-top: 40px;
+  margin-bottom: 200px;
+}
+.content.text-center {
+}
+
+/*---------------------------------------------*/
+.how-bor2,
+.how-bor1 {
+  position: relative;
+  z-index: 1;
+}
+
+.how-bor2::before,
+.how-bor1::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #ccc;
+}
+
+.how-bor1::before {
+  bottom: -21px;
+  left: -21px;
+}
+
+@media (max-width: 767px) {
+  .how-bor1::before {
+    bottom: -21px;
+    right: -21px;
+    left: auto;
+  }
+}
+
+.how-bor2::before {
+  bottom: -21px;
+  right: -21px;
+}
+
+/*---------------------------------------------*/
+.hov-img0 {
+  display: block;
+  overflow: hidden;
+}
+
+.hov-img0 img {
+  width: 100%;
+  -webkit-transition: transform 0.9s ease;
+  -o-transition: transform 0.9s ease;
+  -moz-transition: transform 0.9s ease;
+  transition: transform 0.9s ease;
+}
+
+.hov-img0:hover img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.contact-title {
+  padding-top: 40px;
+  background: {
+    image: asset_url('bg-01');
+  }
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 200px;
+  h2 {
+    font-size: 2.4rem;
+  }
+}
+.contact-section {
+  margin-top: 100px;
+}
+
+.contact-info-title {
+  font-size: 1.2rem;
+}
+
+.contact-map {
+  margin-bottom: 200px;
+}

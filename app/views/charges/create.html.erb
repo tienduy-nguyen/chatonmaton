@@ -1,0 +1,27 @@
+<section>
+ <div class="container mt-5">
+   <h3>We well received your order ! Thanks for having purchased on our shop !</h3>
+   <p>You paid <strong>$ <%= @amount/100 %></strong>.</p><br/>
+   <p>You will now receive your photos on your email address.</p><br/>
+
+   <h3>Your order overview :</h3>
+    <table class="table-primary">
+        <% @item_carts.each do |item_cart| %>
+          <div class="row m-3">
+              <p class="col-3"><%= item_cart.item.title %></p>
+              <p class="col-3"><%= item_cart.item.price %></p>
+
+               <% if item_cart.item.image_url.attached? %>
+                      <%= image_tag item_cart.item.image_url, alt: 'image cat', class: "img-thumbnail col-3"%>
+
+                  <% else %>
+                    <img src="<%= asset_path('cat-default')%>" alt="tets" class="img-thumbnail col-3">
+              <% end %>
+
+          </div>
+        <% end %>
+    </table>
+
+    <%= link_to 'Back to shop', items_path , class: 'btn btn-secondary'%>
+  </div>
+</section>

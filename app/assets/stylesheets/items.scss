@@ -1,0 +1,36 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.btn-outline-primary:hover {
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.fa-cart-plus {
+  color: #444;
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.2);
+    color: #717fe0;
+  }
+}
+
+.item-show-section {
+  margin-bottom: 200px;
+}
+.item-price {
+  color: #717fe0;
+}
+
+.item-section {
+  margin-top: 40px;
+  margin-bottom: 200px;
+}
+
+.card-img {
+  display: block;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}

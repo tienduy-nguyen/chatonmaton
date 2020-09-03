@@ -1,0 +1,42 @@
+<div class="container mt-5 item-show-section">
+  <div class="row">
+    <div class="col-12">
+    <% if @item.image_url.attached? %>
+        <%= image_tag @item.image_url, alt: 'avatar', class: "img-thumbnail" %>
+    <% else %>
+      <img src="<%= asset_path('cat-default')%>" alt="tets" class="img-thumbnail">
+    <% end %>
+    </div>
+  </div>
+
+
+
+    <div class="item-info-wrapper mt-5 row">
+
+      <div class="col-6">
+        <h1><%= @item.title %></h1>
+        <p class="lead">Description :</p>
+        <p><%= @item.description %></p>
+        <p><strong>Prix : </strong><%= @item.price %> €</p>
+      </div>
+
+      <div class="col-6">
+        <div class="btn-group float-right d-flex align-items-center" role="group" aria-label="Basic example">
+            <%= link_to carts_path( item_id: @item.id) , method: :post  do %>
+            <i class="fas fa-cart-plus fa-2x mr-3"></i>
+            <% end %>
+          <button type="button" class="btn btn-secondary"><%= link_to 'Back to shop', items_path %></button>
+        </div>
+
+       
+      </div>
+       <% if current_user != nil && current_user.is_admin %>
+        <div class="ml-auto">
+            <a href="<%= edit_item_path(@item)%>" class="btn btn-primary">Edit</a>
+            <a href="<%= item_path(@item)%>" class="btn btn-danger" data-method="delete">Destroy</a>
+
+        </div>
+        <% end %>
+    </div>
+
+</div>

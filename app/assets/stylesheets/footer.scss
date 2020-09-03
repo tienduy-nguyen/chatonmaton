@@ -1,0 +1,17 @@
+#main-footer {
+  background-color: #333;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 20;
+  a {
+    color: #fff;
+  }
+}
+
+.footer-fixed {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}

@@ -1,0 +1,33 @@
+<section class="orders-section">
+  <div class="container">
+    <div class="row mx-4">
+
+      <h2 class="mb-4">All your orders</h2>
+      <br>
+      <div class="col-12 mb-3">
+        <table class="table-primary">
+
+          <thead>
+            <div class="row" style="border: 0.15em solid">
+              <p class="col-2">Order_id</p>
+              <p class="col-8">Date</p>
+            </div>
+          </thead>
+          <tbody>
+        <% @orders.each do |order| %>
+            <div class="row mt-2 border-bottom px-0">
+               <p class="col-2"><%= order.id%></p>
+              <p class="col-8"><%= get_time(order.created_at)%></p>
+              <%= link_to order_path(order) , class:'view-order text-center mx-auto col-2' do %>
+                <span>View Detail</span>
+            <% end %>
+            </div>
+
+        <% end %>
+          <tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</section>

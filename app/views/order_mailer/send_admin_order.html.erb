@@ -1,0 +1,12 @@
+<p>You got a new order !</p>
+
+<p>A new order had been done, please check and review</p>
+
+<p>Here you can find all the products sold :</p>
+<% @item_carts.each do |product| %>
+  <p>Title : <%= product.item.title%></p>
+  <p>Price : <%= product.item.price%> $</p>
+  <p>Order_Id : <%= product.item.id%></p>
+<%end%>
+
+<p>Here you have the link to access to your admin page :</p>
