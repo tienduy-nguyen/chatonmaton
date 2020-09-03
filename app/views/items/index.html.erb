@@ -6,9 +6,17 @@
   <p class="lead">If you are here, it is because you love those furry cute animals.</p>
   <hr class="my-4">
   <p>We love them too and we have tons of quality pictures juste for you.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-md" href="#" role="button">Learn more</a>
-  </p>
+  <div class="d-flex justify-content-between">
+    <p class="lead">
+      <a class="btn btn-primary btn-md" href="#" role="button">Learn more</a>
+    </p>
+    <% if current_user.is_admin %>
+      <p class="lead">
+      <a class="btn btn-custom-no-radius btn-md" href="<%= new_item_path %>" role="button">
+      <i class="fas fa-plus"></i> New Item</a>
+      </p>
+    <% end %>
+  </div>
 </div>
 
     <div class="items">

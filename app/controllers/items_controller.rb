@@ -12,11 +12,35 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def new
+    @item = Item.new
+
+  end
+
+  def create
+    @item = Item.new(item_params)
+
+    if @item.save
+      flash[:success] = "Create item successfully!"
+     redirect_back(fallback_location: items_path)
+    else
+      @item.errors.full_messages.each do |message|
+        flash[:error] = message
+      end
+      render :new
+    end
+  end
+
+  # GET /items/:id/edit
   def edit
-    
+    if !current_user.is_admin
+      flash[:error] = "Permission denied!"
+      redirect_back(fallback_location: items_path)
+    end
   end
 
 
+  # PUT /items/:id
   def update
     if current_user.is_admin 
 
@@ -27,15 +51,26 @@ class ItemsController < ApplicationController
         flash[:success] = "Update an item"
         redirect_to items_path
       else
+        @item.errors.full_messages.each do |message|
+          flash[:error] = message
+        end
         render :edit
-        flash[:error] = "An error has been occured"
       end
 
     else
-      flash[:error] = "You do not have permission to take this action."
+      flash[:error] = "Permission denied!"
       redirect_back(fallback_location: items_path)
     end
 
+  end
+
+  def destroy
+    if !current_user.is_admin
+      flash[:error] = "Permission denied!"
+      return redirect_back(fallback_location: root_path)
+    end
+    @item.destroy
+    redirect_to items_path
   end
 
 

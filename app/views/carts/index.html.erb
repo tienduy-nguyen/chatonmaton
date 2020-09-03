@@ -1,5 +1,5 @@
 <section class="cart-section">
-   <div class="container mt-5">
+   <div class="container mt-5 px-0">
 
    <% if  @cart.is_empty? %>
     <div class="text-center">
@@ -22,7 +22,7 @@
 
         <tbody>
           <% @item_carts.each do |item_cart| %>
-            <div class="row mt-2 border-bottom">
+            <div class="row mt-2 border-bottom px-0">
                 <p class="col-2"><%= item_cart.item.title %></p>
                 <p class="col-4"><%= truncate(item_cart.item.description, length: 50) %></p>
                 <p class="col-2">$<%= item_cart.item.price %></p>
@@ -50,17 +50,19 @@
             <% end %>
 
         </tbody>
-        <tfoot>
-          <div class="row mt-5" style="border: 0.05em solid">
+        <div>
+          <div class="row mt-5 mx-0 px-0" style="border: 0.05em solid; position: relative;">
             <p class="col-2"></p>
             <p class="col-2"></p>
             <p class="col-2"><strong>Total</strong></p>
             <p class="col-2"><strong>$<%= @total %></strong></p>
 
-            <p class="btn-secondary col-4 text-center"><%= link_to 'Go to payment', new_charge_path %></p>
+            <%= link_to new_charge_path , class:'link-checkout text-center mx-auto col-4' do %>
+                <span>Go to payment</span>
+            <% end %>
           </div>
 
-        </tfoot>
+        </div>
       </table>
    <% end  %>
 

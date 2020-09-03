@@ -10,10 +10,18 @@
           <div class="row m-3">
               <p class="col-3"><%= item_cart.item.title %></p>
               <p class="col-3"><%= item_cart.item.price %></p>
-              <img src="<%= item_cart.item.image_url %>" alt="alternatetext" class="col-3">
+
+               <% if item_cart.item.image_url.attached? %>
+                      <%= image_tag item_cart.item.image_url, alt: 'image cat', class: "img-thumbnail col-3"%>
+
+                  <% else %>
+                    <img src="<%= asset_path('cat-default')%>" alt="tets" class="img-thumbnail">
+              <% end %>
+
           </div>
         <% end %>
     </table>
-    <button type="button" class="btn btn-secondary"><%= link_to 'Back to shop', items_path %></button>
+
+    <%= link_to 'Back to shop', items_path , class: 'btn btn-secondary'%>
   </div>
 </section>
