@@ -16,4 +16,6 @@ class Order < ApplicationRecord
   def send_user_mail
     OrderMailer.send_order_confirmation(self.user).deliver
   end
+
+  
 end

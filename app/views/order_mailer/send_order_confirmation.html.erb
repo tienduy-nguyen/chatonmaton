@@ -3,10 +3,14 @@
 <p>Your order is confirmed !</p>
 
 <p>Here you can find your items :</p>
-<% @item_cart.each do |product| %>
-  <p>Title : <%= product.item.title%></p>
-  <p>Price : <%= product.item.price%> $</p>
-  <img src="<%= product.item.image_url%>">
+<% @item_carts.each do |item_cart| %>
+  <p>Title : <%= item_cart.item.title%></p>
+  <p>Price : <%= item_cart.item.price%> $</p>
+  <% if item_cart.item.image_url.attached? %>
+        <%= image_tag item_cart.item.image_url, alt: 'Image' %>
+    <% else %>
+      <img src="<%= asset_path('cat-default')%>" alt="Image">
+    <% end %>
 <%end%>
 
 <p> Thanks you for your purchase </p>
