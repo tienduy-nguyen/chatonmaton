@@ -54,7 +54,11 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
+
+  # We need to change :authenticate_admin_user to :authenticate_user. It's is a method authentication of devise.
   config.authentication_method = :authenticate_user!
+
+  # Login auto with the user of our page
   config.current_user_method = :current_user
 
   # == User Authorization
