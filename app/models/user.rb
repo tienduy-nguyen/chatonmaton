@@ -7,8 +7,8 @@ class User < ApplicationRecord
   after_create :must_create_cart, :welcome_send
   
 
-  has_one :cart
-  has_many :orders
+  has_one :cart, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   validates :email, 
   presence:true , 
